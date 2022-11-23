@@ -1,3 +1,3 @@
 public enum Entretien {
-    Entretenue, PasEntretenue, Abime, Epave
+    ENTRETENUE, PASENTRETENUE, ABIME, EPAVE
 }

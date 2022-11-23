@@ -1,3 +1,3 @@
 public enum MarquePneu {
-    Michelin, Goodyear, Bridgestone, Pirelli, Continental
+    MICHELIN, GOODYEAR, BRIDGESTONE, PIRELLI, CONTINANTAL
 }
