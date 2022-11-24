@@ -15,6 +15,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(4, 70, 6.10, Propultion.SP95);
         }
+        int getPrix() {
+            return 2200;
+        }
     },
     TROIS_CENT_HUIT{
         Marque getMarque() {
@@ -31,6 +34,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(7, 155, 4.8, Propultion.DIESEL);
+        }
+        int getPrix() {
+            return 37870;
         }
     },
     MILLE_SEPT_CENT_CINQUANTE{
@@ -49,6 +55,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(10, 115, 11, Propultion.ESSENCE);
         }
+        int getPrix() {
+            return 49000;
+        }
     },
     GIULIA{
         Marque getMarque() {
@@ -65,6 +74,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(11, 200, 9.2, Propultion.ESSENCE);
+        }
+        int getPrix() {
+            return 48089;
         }
     },
     R_HUIT_GT{
@@ -83,6 +95,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(49, 620, 15, Propultion.ESSENCE);
         }
+        int getPrix() {
+            return 245000;
+        }
     },
     A_SIX{
         Marque getMarque() {
@@ -99,6 +114,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(7, 136, 8.3, Propultion.DIESEL);
+        }
+        int getPrix() {
+            return 59080;
         }
     },
     SERIE_UN{
@@ -117,6 +135,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(15, 265, 7, Propultion.ESSENCE);
         }
+        int getPrix() {
+            return 30200;
+        }
     },
     X_TROIS{
         Marque getMarque() {
@@ -133,6 +154,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(16, 265, 9.3, Propultion.ESSENCE);
+        }
+        int getPrix() {
+            return 52100;
         }
     },
     CINQ_CENT_ABARTH{
@@ -151,6 +175,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(9, 160, 6.6, Propultion.ESSENCE);
         }
+        int getPrix() {
+            return 28200;
+        }
     },
     MULTIPLA{
         Marque getMarque() {
@@ -167,6 +194,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(7, 120, 1.9, Propultion.DIESEL);
+        }
+        int getPrix() {
+            return 3400;
         }
     },
     MUSTANG_SOIXANTE_NEUF{
@@ -185,6 +215,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(27, 330, 17.7, Propultion.ESSENCE);
         }
+        int getPrix() {
+            return 65990;
+        }
     },
     EXPLORER{
         Marque getMarque() {
@@ -201,6 +234,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(32, 457, 3.1, Propultion.HYBRIDE);
+        }
+        int getPrix() {
+            return 86400;
         }
     },
     PRIMASTAR_COMBI{
@@ -219,6 +255,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(8, 150, 7.2, Propultion.DIESEL);
         }
+        int getPrix() {
+            return 24675;
+        }
     },
     JUKE{
         Marque getMarque() {
@@ -235,6 +274,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(6, 114, 5.8, Propultion.SP95);
+        }
+        int getPrix() {
+            return 22190;
         }
     },
     YARIS{
@@ -253,6 +295,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(4, 92, 5.7, Propultion.SP95);
         }
+        int getPrix() {
+            return 18650;
+        }
     },
     MODEL_S{
         Marque getMarque() {
@@ -269,6 +314,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(4, 1020, 0, Propultion.ELECTRIQUE);
+        }
+        int getPrix() {
+            return 138990;
         }
     },
     MODEL_Y{
@@ -287,6 +335,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(11, 462, 0, Propultion.ELECTRIQUE);
         }
+        int getPrix() {
+            return 49990;
+        }
     },
     CLASSE_C{
         Marque getMarque() {
@@ -303,6 +354,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(11, 204, 6.5, Propultion.HYBRIDE);
+        }
+        int getPrix() {
+            return 58000;
         }
     },
     CLASSE_G{
@@ -321,6 +375,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(17, 245, 9.9, Propultion.DIESEL);
         }
+        int getPrix() {
+            return 149650;
+        }
     },
     KANGOO{
         Marque getMarque() {
@@ -337,6 +394,9 @@ public enum Model {
 
         Moteur getMoteur() {
             return new Moteur(7, 114, 6.2, Propultion.ESSENCE);
+        }
+        int getPrix() {
+            return 25900;
         }
     },
     ARKANA{
@@ -355,6 +415,9 @@ public enum Model {
         Moteur getMoteur() {
             return new Moteur(7, 140, 4.9, Propultion.ESSENCE);
         }
+        int getPrix() {
+            return 31300;
+        }
     };
 
 
@@ -366,4 +429,6 @@ public enum Model {
     abstract Marque getMarque();
 
     abstract Roue getRoue();
+
+    abstract int getPrix();
 }

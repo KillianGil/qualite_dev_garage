@@ -5,7 +5,7 @@ import java.util.Random;
 public class VoitureFactory {
     public static Voiture newVoiture(Model model) {
         return new Voiture(model.getType(),model.getMarque(), model.getMoteur(), model.getRoue(),
-                Year.now().getValue(), 0, genImat());
+                Year.now().getValue(), 0, genImat(), Entretien.NEUVE,model.getPrix());
     }
 
     private static String genImat(){

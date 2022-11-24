@@ -1,15 +1,18 @@
+import java.time.Year;
+
 public class Voiture {
     private final Type type;
     private final Marque marque;
     private final Moteur moteur;
     private final Roue roue;
 
-    private int annee, kilometrage, nbMains, note, prix;
-    private Entretien entretien;
+    private int annee, kilometrage, nbMains, prix;
+    private double note;
+    private final Entretien entretien;
 
     private final String imatriculation;
 
-    public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation) {
+    public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation, Entretien entretien, int prixNeuve) {
         this.type = type;
         this.marque = marque;
         this.moteur = moteur;
@@ -17,6 +20,37 @@ public class Voiture {
         this.annee = annee;
         this.kilometrage = kilometrage;
         this.imatriculation = imatriculation;
+        this.entretien = entretien;
+        this.prix = prixNeuve;
+        setNote();
+        setPrix();
+    }
+
+    public void setNote(){
+        switch (entretien){
+            case NEUVE -> note = 5;
+            case PASENTRETENUE ->  note -= 0.5;
+            case ABIME -> note -= 1.5;
+            case EPAVE -> note -= 2.5;
+        }
+        if (kilometrage > 100000) note -= 0.5;
+        else if (kilometrage > 80000) note -= 1;
+        else if (kilometrage > 40000) note -=1.5;
+
+        if (nbMains > 3) note -= 0.5;
+    }
+
+    public void setPrix(){
+        if(entretien != Entretien.NEUVE){
+            if(annee + 1 == Year.now().getValue()) prix /= 1/3;
+            if(nbMains != 0) prix /= 1/6;
+            switch ((int) note){
+                case 4 -> prix /= 1/6;
+                case 3 -> prix /= 2/6;
+                case 2 -> prix /= 3/6;
+                case 1, 0 -> prix /= 4/6;
+            }
+        }
     }
 
     @Override
