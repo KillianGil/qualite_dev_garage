@@ -1,13 +1,13 @@
 public class Voiture {
-    private Type type;
-    private Marque marque;
-    private Moteur moteur;
-    private Roue roue;
+    private final Type type;
+    private final Marque marque;
+    private final Moteur moteur;
+    private final Roue roue;
 
     private int annee, kilometrage, nbMains, note, prix;
     private Entretien entretien;
 
-    private String imatriculation;
+    private final String imatriculation;
 
     public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation) {
         this.type = type;
@@ -17,5 +17,22 @@ public class Voiture {
         this.annee = annee;
         this.kilometrage = kilometrage;
         this.imatriculation = imatriculation;
+    }
+
+    @Override
+    public String toString() {
+        return "Voiture{" +
+                "type=" + type +
+                ", marque=" + marque +
+                ", "+ moteur +
+                ", " + roue +
+                ", annee=" + annee +
+                ", kilometrage=" + kilometrage +
+                ", nbMains=" + nbMains +
+                ", note=" + note +
+                ", prix=" + prix +
+                ", entretien=" + entretien +
+                ", imatriculation='" + imatriculation + '\'' +
+                '}';
     }
 }

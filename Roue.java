@@ -1,6 +1,8 @@
+import java.util.Objects;
+
 public class Roue {
-    private Jante jante;
-    private MarquePneu marquePneu;
+    private final Jante jante;
+    private final MarquePneu marquePneu;
 
     public Roue(Jante jantes, MarquePneu marquePneu) {
         this.jante = jantes;
@@ -15,4 +17,24 @@ public class Roue {
         return marquePneu;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Roue roue = (Roue) o;
+        return jante == roue.jante && marquePneu == roue.marquePneu;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(jante, marquePneu);
+    }
+
+    @Override
+    public String toString() {
+        return "Roue= {" +
+                "jante=" + jante +
+                ", marquePneu=" + marquePneu +
+                '}';
+    }
 }
