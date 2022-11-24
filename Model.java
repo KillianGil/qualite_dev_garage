@@ -5,7 +5,7 @@ public enum Model {
         }
 
         Roue getRoue() {
-            return new Roue(Jante.TREIZE_POUCE, MarquePneu.MICHELIN);
+            return new Roue(Jante.TREIZE_POUCES, MarquePneu.MICHELIN);
         }
 
         Type getType(){
