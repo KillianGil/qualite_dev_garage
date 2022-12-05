@@ -1,3 +1,5 @@
+package code;
+
 public enum Modele {
     CENT_SIX{
         Marque getMarque() {

@@ -1,3 +1,5 @@
+package code;
+
 import java.util.Objects;
 
 public class Moteur {
@@ -59,7 +61,7 @@ public class Moteur {
 
     @Override
     public String toString() {
-        return "Moteur{" +
+        return "java.Moteur{" +
                 "puissanceFiscal=" + puissanceFiscal +
                 ", cheveaux=" + cheveaux +
                 ", consomation=" + consomation +

@@ -1,3 +1,5 @@
+package code;
+
 import java.util.Objects;
 
 public class Roue {
@@ -32,7 +34,7 @@ public class Roue {
 
     @Override
     public String toString() {
-        return "Roue= {" +
+        return "java.Roue= {" +
                 "jante=" + jante +
                 ", marquePneu=" + marquePneu +
                 '}';
