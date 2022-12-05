@@ -6,8 +6,9 @@ public class Voiture {
     private final Moteur moteur;
     private final Roue roue;
 
-    private int annee, kilometrage, nbMains, prix;
-    private double note;
+    private final int annee, kilometrage;
+    private int  nbMains;
+    private double note, prix;
     private final Entretien entretien;
 
     private final String imatriculation;
@@ -42,13 +43,13 @@ public class Voiture {
 
     public void setPrix(){
         if(entretien != Entretien.NEUVE){
-            if(annee + 1 == Year.now().getValue()) prix /= 1/3;
-            if(nbMains != 0) prix /= 1/6;
+            if(annee + 1 == Year.now().getValue()) prix /= 1.0 /3;
+            if(nbMains != 0) prix /= 1.0 /6;
             switch ((int) note){
-                case 4 -> prix /= 1/6;
-                case 3 -> prix /= 2/6;
-                case 2 -> prix /= 3/6;
-                case 1, 0 -> prix /= 4/6;
+                case 4 -> prix /= 1.0 /6;
+                case 3 -> prix /= 2.0 /6;
+                case 2 -> prix /= 3.0 /6;
+                case 1, 0 -> prix /= 4.0 /6;
             }
         }
     }

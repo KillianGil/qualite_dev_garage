@@ -1,4 +1,4 @@
-public enum Model {
+public enum Modele {
     CENT_SIX{
         Marque getMarque() {
             return Marque.PEUGEOT;

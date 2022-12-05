@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class VoitureFactory {
-    public static Voiture newVoiture(Model model) {
-        return new Voiture(model.getType(),model.getMarque(), model.getMoteur(), model.getRoue(),
-                Year.now().getValue(), 0, genImat(), Entretien.NEUVE,model.getPrix());
+    public static Voiture newVoiture(Modele modele) {
+        return new Voiture(modele.getType(), modele.getMarque(), modele.getMoteur(), modele.getRoue(),
+                Year.now().getValue(), 0, genImat(), Entretien.NEUVE, modele.getPrix());
     }
 
     private static String genImat(){
@@ -20,14 +20,14 @@ public class VoitureFactory {
         return stringBuilder.toString();
     }
 
-    public ArrayList<Model> listModelByMarque(Marque marque) {
-        ArrayList<Model> models = new ArrayList<>();
-        for (Model model : Model.values()) {
-            if (model.getMarque().equals(marque)) {
-                models.add(model);
+    public ArrayList<Modele> listModelByMarque(Marque marque) {
+        ArrayList<Modele> modeles = new ArrayList<>();
+        for (Modele modele : Modele.values()) {
+            if (modele.getMarque().equals(marque)) {
+                modeles.add(modele);
             }
         }
-        return models;
+        return modeles;
     }
 
 
