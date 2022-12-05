@@ -3,9 +3,9 @@ package code;
 import java.util.Objects;
 
 public class Moteur {
-    private int puissanceFiscal, cheveaux;
-    private double consomation;
-    private Propultion propultion;
+    private final int puissanceFiscal, cheveaux;
+    private final double consomation;
+    private final Propultion propultion;
 
     public Moteur(int puissanceFiscal, int cheveaux, double consomation, Propultion propultion) {
         this.puissanceFiscal = puissanceFiscal;
@@ -18,32 +18,16 @@ public class Moteur {
         return puissanceFiscal;
     }
 
-    public void setPuissanceFiscal(int puissanceFiscal) {
-        this.puissanceFiscal = puissanceFiscal;
-    }
-
     public int getCheveaux() {
         return cheveaux;
-    }
-
-    public void setCheveaux(int cheveaux) {
-        this.cheveaux = cheveaux;
     }
 
     public double getConsomation() {
         return consomation;
     }
 
-    public void setConsomation(double consomation) {
-        this.consomation = consomation;
-    }
-
     public Propultion getPropultion() {
         return propultion;
-    }
-
-    public void setPropultion(Propultion propultion) {
-        this.propultion = propultion;
     }
 
     @Override
@@ -61,11 +45,11 @@ public class Moteur {
 
     @Override
     public String toString() {
-        return "java.Moteur{" +
-                "puissanceFiscal=" + puissanceFiscal +
-                ", cheveaux=" + cheveaux +
-                ", consomation=" + consomation +
-                ", propultion=" + propultion +
+        return "Moteur= {" +
+                "PuissanceFiscal= " + puissanceFiscal +
+                ", Cheveaux= " + cheveaux +
+                ", Consomation= " + consomation +
+                ", Propultion= " + propultion +
                 '}';
     }
 }

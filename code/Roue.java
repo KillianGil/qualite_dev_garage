@@ -34,9 +34,9 @@ public class Roue {
 
     @Override
     public String toString() {
-        return "java.Roue= {" +
-                "jante=" + jante +
-                ", marquePneu=" + marquePneu +
+        return "Roue= {" +
+                "Jante= " + jante +
+                ", Marque Pneu= " + marquePneu +
                 '}';
     }
 }

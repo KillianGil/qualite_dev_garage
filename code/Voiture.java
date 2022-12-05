@@ -2,6 +2,7 @@ package code;
 
 
 import java.time.Year;
+import java.util.Objects;
 
 
 public class Voiture {
@@ -59,19 +60,35 @@ public class Voiture {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Voiture voiture = (Voiture) o;
+        return annee == voiture.annee && kilometrage == voiture.kilometrage && nbMains == voiture.nbMains &&
+                Double.compare(voiture.note, note) == 0 && Double.compare(voiture.prix, prix) == 0 && type == voiture.type &&
+                marque == voiture.marque && Objects.equals(moteur, voiture.moteur) && Objects.equals(roue, voiture.roue) &&
+                entretien == voiture.entretien && Objects.equals(imatriculation, voiture.imatriculation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, marque, moteur, roue, annee, kilometrage, nbMains, note, prix, entretien, imatriculation);
+    }
+
+    @Override
     public String toString() {
-        return "java.Voiture{" +
-                "type=" + type +
-                ", marque=" + marque +
-                ", "+ moteur +
-                ", " + roue +
-                ", annee=" + annee +
-                ", kilometrage=" + kilometrage +
-                ", nbMains=" + nbMains +
-                ", note=" + note +
-                ", prix=" + prix +
-                ", entretien=" + entretien +
-                ", imatriculation='" + imatriculation + '\'' +
+        return "Voiture{" +
+                "\nType= " + type +
+                "\nMarque= " + marque +
+                "\n"+ moteur +
+                "\n" + roue +
+                "\nAnnee= " + annee +
+                "\nKilometrage= " + kilometrage +
+                "\nNombre de mains= " + nbMains +
+                "\nNote= " + note +
+                "\nPrix= " + prix +
+                "\nEntretien= " + entretien +
+                "\nImatriculation= '" + imatriculation + '\'' +
                 '}';
     }
 }
