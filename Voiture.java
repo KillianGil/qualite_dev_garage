@@ -6,11 +6,10 @@ public class Voiture {
     private final Moteur moteur;
     private final Roue roue;
 
-    private final int annee, kilometrage;
-    private int  nbMains;
+    private final int annee, kilometrage, nbMains;
     private double note, prix;
-    private final Entretien entretien;
 
+    private final Entretien entretien;
     private final String imatriculation;
 
     public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation, Entretien entretien, int prixNeuve) {
@@ -23,6 +22,7 @@ public class Voiture {
         this.imatriculation = imatriculation;
         this.entretien = entretien;
         this.prix = prixNeuve;
+        this.nbMains = 0;
         setNote();
         setPrix();
     }
