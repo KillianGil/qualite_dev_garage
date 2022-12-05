@@ -10,6 +10,11 @@ public class VoitureFactory {
                 Year.now().getValue(), 0, genImat(), Entretien.NEUVE, modele.getPrix());
     }
 
+    public static Voiture addVoiture(Modele modele) {
+        return new Voiture(modele.getType(), modele.getMarque(), modele.getMoteur(), modele.getRoue(),
+                Year.now().getValue(), 0, genImat(), Entretien.NEUVE, modele.getPrix());
+    }
+
     private static String genImat(){
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder();
