@@ -2,6 +2,7 @@ package code;
 
 
 import java.time.Year;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -91,4 +92,30 @@ public class Voiture {
                 "\nImatriculation= '" + imatriculation + '\'' +
                 '}';
     }
+
+
+    public static class Catalogue {
+        private String nom, auteur;
+        private int nbVoitures;
+        private ArrayList<Voiture> voitures;
+        private static Catalogue catalogue = new Catalogue();
+
+        public static Catalogue getCatalogue(){
+            Catalogue Catalogue;
+            return catalogue;
+        }
+
+
+        public void ajouterVoiture(Voiture voiture){
+            this.voitures.add(voiture);
+            System.out.println("La voiture" + voiture.getNom() + "a été ajouté au catalogue! ");
+        }
+
+    }
+
+    private String getNom() {
+        return this.getNom();
+    }
+
+
 }

@@ -1,16 +1,24 @@
 package code;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 public class start_jeu {
     public static InputStream InputStream;
 
 
-    public static void lancelejeu() {
+    public static void lancelejeu() throws IOException {
         int choix;
         boolean etat_du_jeu = true;
 
         while (etat_du_jeu == true ) {
-            System.out.println("Bienvenue dans le garage de l'IUT");
+            System.out.println("        _______\n" +
+                    "       //  ||\\ \\\n" +
+                    " _____//___||_\\ \\___\n" +
+                    " )  _          _    \\\n" +
+                    " |_/ \\________/ \\___|__| vroum vroum \n" +
+                    "___\\_/________\\_/______\n");
             System.out.println("1 - Consulter le catalogue ");
             System.out.println("2 - Ajouter une nouvelle voiture ");
             System.out.println("3 - Supprimer une voiture ");
@@ -19,9 +27,31 @@ public class start_jeu {
             Scanner sc = new Scanner(System.in);
             choix = sc.nextInt();
             if (choix == 1) {
+                for (Marque allMarque : Marque.values()){
+                    System.out.println(allMarque);
+                }
+                System.out.println("Quelle marque de voiture souhaitez vous consultez?");
+                String marque;
+                Scanner scannerNewVoiture = new Scanner(System.in);
+                marque = scannerNewVoiture.nextLine();
+                switch(marque){
 
-                Voiture centSix = VoitureFactory.newVoiture(Modele.CENT_SIX);
-                System.out.println(centSix) ;
+                    case "ALPHAROMEO":
+
+                        break;
+
+                    case "AUDI":
+                        System.out.println("Allons, allons, Vous n'avez pas les sous pour ca...");
+                        break;
+
+                    case "PEUGEOT":
+                        System.out.println("Buenos dias");
+                        break;
+                    default:
+                        System.out.println("Cette marque n'est pas présente dans notre garage :( ");
+                        break;
+                }
+                etat_du_jeu = false;
 
             }
             else if (choix == 2){
