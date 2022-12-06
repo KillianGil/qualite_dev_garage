@@ -34,6 +34,21 @@ public class Voiture{
         setNote();
     }
 
+    public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation, Entretien entretien, int prixNeuve, int nbMains) {
+        this.type = type;
+        this.marque = marque;
+        this.moteur = moteur;
+        this.roue = roue;
+        this.annee = annee;
+        this.kilometrage = kilometrage;
+        this.imatriculation = imatriculation;
+        this.entretien = entretien;
+        this.prix = prixNeuve;
+        setPrix();
+        this.nbMains = nbMains;
+        setNote();
+    }
+
     public Marque getMarque() {
         return marque;
     }

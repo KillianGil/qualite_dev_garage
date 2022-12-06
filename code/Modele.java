@@ -17,8 +17,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(4, 70, 6.10, Propultion.SP95);
         }
+
         int getPrix() {
             return 2200;
+        }
+
+        String nameToString() {
+            return "106";
         }
     },
     TROIS_CENT_HUIT{
@@ -37,8 +42,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(7, 155, 4.8, Propultion.DIESEL);
         }
+
         int getPrix() {
             return 37870;
+        }
+
+        String nameToString() {
+            return "308";
         }
     },
     MILLE_SEPT_CENT_CINQUANTE{
@@ -57,8 +67,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(10, 115, 11, Propultion.ESSENCE);
         }
+
         int getPrix() {
             return 49000;
+        }
+
+        String nameToString() {
+            return "1750";
         }
     },
     GIULIA{
@@ -77,8 +92,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(11, 200, 9.2, Propultion.ESSENCE);
         }
+        
         int getPrix() {
             return 48089;
+        }
+
+        String nameToString() {
+            return "GIULIA";
         }
     },
     R_HUIT_GT{
@@ -97,8 +117,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(49, 620, 15, Propultion.ESSENCE);
         }
+        
         int getPrix() {
             return 245000;
+        }
+
+        String nameToString() {
+            return "R8 GT";
         }
     },
     A_SIX{
@@ -117,8 +142,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(7, 136, 8.3, Propultion.DIESEL);
         }
+        
         int getPrix() {
             return 59080;
+        }
+
+        String nameToString() {
+            return "A6";
         }
     },
     SERIE_UN{
@@ -137,8 +167,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(15, 265, 7, Propultion.ESSENCE);
         }
+        
         int getPrix() {
             return 30200;
+        }
+
+        String nameToString() {
+            return "SERIE 1";
         }
     },
     X_TROIS{
@@ -157,8 +192,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(16, 265, 9.3, Propultion.ESSENCE);
         }
+        
         int getPrix() {
             return 52100;
+        }
+
+        String nameToString() {
+            return "X3";
         }
     },
     CINQ_CENT_ABARTH{
@@ -177,8 +217,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(9, 160, 6.6, Propultion.ESSENCE);
         }
+        
         int getPrix() {
             return 28200;
+        }
+
+        String nameToString() {
+            return "500 ABARTH";
         }
     },
     MULTIPLA{
@@ -197,8 +242,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(7, 120, 1.9, Propultion.DIESEL);
         }
+        
         int getPrix() {
             return 3400;
+        }
+
+        String nameToString() {
+            return "MULTIPLA";
         }
     },
     MUSTANG_SOIXANTE_NEUF{
@@ -217,8 +267,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(27, 330, 17.7, Propultion.ESSENCE);
         }
+        
         int getPrix() {
             return 65990;
+        }
+
+        String nameToString() {
+            return "MUSTANG 69";
         }
     },
     EXPLORER{
@@ -237,8 +292,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(32, 457, 3.1, Propultion.HYBRIDE);
         }
+        
         int getPrix() {
             return 86400;
+        }
+
+        String nameToString() {
+            return "EXPLORER";
         }
     },
     PRIMASTAR_COMBI{
@@ -257,8 +317,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(8, 150, 7.2, Propultion.DIESEL);
         }
+        
         int getPrix() {
             return 24675;
+        }
+
+        String nameToString() {
+            return "PRIMASTAR COMBI";
         }
     },
     JUKE{
@@ -277,8 +342,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(6, 114, 5.8, Propultion.SP95);
         }
+        
         int getPrix() {
             return 22190;
+        }
+
+        String nameToString() {
+            return "JUKE";
         }
     },
     YARIS{
@@ -297,8 +367,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(4, 92, 5.7, Propultion.SP95);
         }
+        
         int getPrix() {
             return 18650;
+        }
+
+        String nameToString() {
+            return "YARIS";
         }
     },
     MODEL_S{
@@ -317,8 +392,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(4, 1020, 0, Propultion.ELECTRIQUE);
         }
+        
         int getPrix() {
             return 138990;
+        }
+
+        String nameToString() {
+            return "MODEL S";
         }
     },
     MODEL_Y{
@@ -337,8 +417,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(11, 462, 0, Propultion.ELECTRIQUE);
         }
+        
         int getPrix() {
             return 49990;
+        }
+
+        String nameToString() {
+            return "MODEL Y";
         }
     },
     CLASSE_C{
@@ -357,8 +442,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(11, 204, 6.5, Propultion.HYBRIDE);
         }
+        
         int getPrix() {
             return 58000;
+        }
+
+        String nameToString() {
+            return "CLASSE C";
         }
     },
     CLASSE_G{
@@ -377,8 +467,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(17, 245, 9.9, Propultion.DIESEL);
         }
+        
         int getPrix() {
             return 149650;
+        }
+
+        String nameToString() {
+            return "CLASSE G";
         }
     },
     KANGOO{
@@ -397,8 +492,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(7, 114, 6.2, Propultion.ESSENCE);
         }
+        
         int getPrix() {
             return 25900;
+        }
+
+        String nameToString() {
+            return "KANGOO";
         }
     },
     ARKANA{
@@ -417,8 +517,13 @@ public enum Modele {
         Moteur getMoteur() {
             return new Moteur(7, 140, 4.9, Propultion.ESSENCE);
         }
+        
         int getPrix() {
             return 31300;
+        }
+
+        String nameToString() {
+            return "ARKANA";
         }
     };
 
@@ -433,4 +538,6 @@ public enum Modele {
     abstract Roue getRoue();
 
     abstract int getPrix();
+    
+    abstract String nameToString();
 }

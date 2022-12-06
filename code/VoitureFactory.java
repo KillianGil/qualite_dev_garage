@@ -10,9 +10,9 @@ public class VoitureFactory {
                 Year.now().getValue(), 0, genImat(), Entretien.NEUVE, modele.getPrix());
     }
 
-    public static Voiture newVoitureOccasion(Modele modele, int annee, String imat, Entretien entretien, int prix) {
+    public static Voiture newVoitureOccasion(Modele modele, int annee, int kilometrage, String imat, Entretien entretien, int prix, int nbMains) {
         return new Voiture(modele.getType(), modele.getMarque(), modele.getMoteur(), modele.getRoue(),
-                annee, 0, imat, entretien, prix);
+                annee, 0, imat, entretien, prix, nbMains);
     }
 
     private static String genImat(){

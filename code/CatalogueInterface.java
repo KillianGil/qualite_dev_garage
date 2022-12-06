@@ -1,78 +1,97 @@
 package code;
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.Objects;
 import java.util.Scanner;
 public class CatalogueInterface {
-    public static InputStream InputStream;
+    private int choix;
+    private boolean menu = true;
+    private Scanner sc = new Scanner(System.in);
+    Garage garage;
 
+    public CatalogueInterface(Garage garage) {
+        this.garage = garage;
+    }
 
-    public static void lancelejeu() throws IOException {
-        int choix;
-        boolean etat_du_jeu = true;
+    public void lancelejeu() {
 
-        while (etat_du_jeu == true ) {
-            System.out.println("        _______\n" +
-                    "       //  ||\\ \\\n" +
-                    " _____//___||_\\ \\___\n" +
-                    " )  _          _    \\\n" +
-                    " |_/ \\________/ \\___|__| vroum vroum \n" +
-                    "___\\_/________\\_/______\n");
-            System.out.println("1 - Consulter le catalogue ");
-            System.out.println("2 - Ajouter une nouvelle voiture ");
-            System.out.println("3 - Supprimer une voiture ");
-            System.out.println("4 - Pour quitter le garage ");
-            System.out.println("Rentrer le chiffre correspondant a votre choix : ");
-            Scanner sc = new Scanner(System.in);
+        while (menu) {
+            System.out.println("""
+                            _______
+                           //  ||\\ \\
+                     _____//___||_\\ \\___
+                     )  _          _    \\
+                     |_/ \\________/ \\___|__| vroum vroum\s
+                    ___\\_/________\\_/______
+                    
+                    1- Consulter le catalogue
+                    2- Ajouter une nouvelle voiture
+                    3- Supprimer une voiture
+                    4- Pour quitter le garage
+                    Rentrer le chiffre de votre choix :
+                    """);
+
             choix = sc.nextInt();
-            if (choix == 1) {
-                for (Marque allMarque : Marque.values()){
-                    System.out.println(allMarque);
-                }
-                System.out.println("Quelle marque de voiture souhaitez vous consultez?");
-                String marque;
-                Scanner scannerNewVoiture = new Scanner(System.in);
-                marque = scannerNewVoiture.nextLine();
-                switch(marque){
-
-                    case "ALPHAROMEO":
-
-                        break;
-
-                    case "AUDI":
-                        System.out.println("Allons, allons, Vous n'avez pas les sous pour ca...");
-                        break;
-
-                    case "PEUGEOT":
-                        System.out.println("Buenos dias");
-                        break;
-                    default:
-                        System.out.println("Cette marque n'est pas présente dans notre garage :( ");
-                        break;
-                }
-                etat_du_jeu = false;
-
-            }
-            else if (choix == 2){
-
-                String modele ;
-                Scanner scannerNewVoiture = new Scanner(System.in);
-                modele = scannerNewVoiture.nextLine();
-                System.out.println("Veuillez renseigner le modele correspondant");
-                if (modele == "CENTSIX"){
-                    Voiture New106 = VoitureFactory.newVoiture(Modele.CENT_SIX) ;
-                    System.out.println(New106);
-                }
-
-            }
-            else if ( choix == 4 ) {
-                etat_du_jeu = false;
+            switch (choix) {
+                case 1 -> System.out.println(garage);
+                case 2 -> newVoiture();
+                case 3 -> supVoiture();
+                default -> menu = false;
             }
 
         }
-        System.out.println("Merci de votre visite");
+        System.out.println("Merci de votre visite\n");
+    }
+
+    private void supVoiture() {
+        System.out.println("Selectionné la voiture à supprimer :\n");
     }
 
 
+
+    private void newVoiture() {
+        System.out.println("Model de la voiture : ");
+        String nom = sc.next();
+        Modele modeleV = null;
+        for (Modele modele: Modele.values()) {
+            if(Objects.equals(modele.nameToString(), nom)) modeleV = modele;
+        }
+
+        System.out.println("Année de la voiture : ");
+        int annee = sc.nextInt();
+
+        System.out.println("Kilometrage de la voiture : ");
+        int kilometrage = sc.nextInt();
+
+        System.out.println("Imatriculation de la voiture : ");
+        String imat = sc.next();
+
+        System.out.println("""
+                Entretien de la voiture :\s
+                1- Neuve
+                2- Entrenue
+                3- Pas entretenue
+                4- Abimé
+                5- Epave""");
+        int ent = sc.nextInt();
+        Entretien entretien = null;
+        switch (ent){
+            case 1 -> entretien = Entretien.NEUVE;
+            case 2 -> entretien = Entretien.ENTRETENUE;
+            case 3 -> entretien = Entretien.PASENTRETENUE;
+            case 4 -> entretien = Entretien.ABIME;
+            case 5 -> entretien = Entretien.EPAVE;
+        }
+        //assert modeleV != null;
+
+        System.out.println("Prix de la voiture : ");
+        int prix = sc.nextInt();
+
+        System.out.println("Nombre de mains de la voiture : ");
+        int nbMains = sc.nextInt();
+
+        Voiture newV = VoitureFactory.newVoitureOccasion(modeleV, annee, kilometrage, imat, entretien, prix, nbMains);
+        garage.addVoiture(newV);
+        System.out.println(newV);
+    }
 }
 
 

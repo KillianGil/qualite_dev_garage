@@ -14,6 +14,9 @@ public class Garage {
         this.catalogue = catalogue;
     }
 
+    public void addVoiture(Voiture voiture){
+        this.catalogue.add(voiture);
+    }
     public ArrayList<Voiture> filtreMarque(Marque marque){
         filtre.clear();
         for (Voiture voiture : catalogue) {

@@ -15,6 +15,7 @@ public class MainTest {
         System.out.println(garage);
 
         System.out.println(garage.filtrePrix());
-        //start_jeu.lancelejeu();
+        CatalogueInterface catalogue = new CatalogueInterface(garage);
+        catalogue.lancelejeu();
     }
 }
