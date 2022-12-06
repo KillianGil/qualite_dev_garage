@@ -6,14 +6,15 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class Voiture {
+public class Voiture{
     private final Type type;
     private final Marque marque;
     private final Moteur moteur;
     private final Roue roue;
 
     private final int annee, kilometrage, nbMains;
-    private double note, prix;
+    private int prix;
+    private double note;
 
     private final Entretien entretien;
     private final String imatriculation;
@@ -28,9 +29,25 @@ public class Voiture {
         this.imatriculation = imatriculation;
         this.entretien = entretien;
         this.prix = prixNeuve;
+        setPrix();
         this.nbMains = 0;
         setNote();
-        setPrix();
+    }
+
+    public Marque getMarque() {
+        return marque;
+    }
+
+    public int getNbMains() {
+        return nbMains;
+    }
+
+    public double getNote() {
+        return note;
+    }
+
+    public int getPrix() {
+        return prix;
     }
 
     public void setNote(){
@@ -49,13 +66,13 @@ public class Voiture {
 
     public void setPrix(){
         if(entretien != Entretien.NEUVE){
-            if(annee + 1 == Year.now().getValue()) prix /= 1.0 /3;
-            if(nbMains != 0) prix /= 1.0 /6;
+            if(annee + 1 == Year.now().getValue()) prix /= (int)(1 /3);
+            if(nbMains != 0) prix /= (int)(1 /6);
             switch ((int) note){
-                case 4 -> prix /= 1.0 /6;
-                case 3 -> prix /= 2.0 /6;
-                case 2 -> prix /= 3.0 /6;
-                case 1, 0 -> prix /= 4.0 /6;
+                case 4 -> prix /= (int)(1 /6);
+                case 3 -> prix /= (int)(2 /6);
+                case 2 -> prix /= (int)(1 /2);
+                case 1, 0 -> prix /= (int)(4 /6);
             }
         }
     }
@@ -66,14 +83,14 @@ public class Voiture {
         if (o == null || getClass() != o.getClass()) return false;
         Voiture voiture = (Voiture) o;
         return annee == voiture.annee && kilometrage == voiture.kilometrage && nbMains == voiture.nbMains &&
-                Double.compare(voiture.note, note) == 0 && Double.compare(voiture.prix, prix) == 0 && type == voiture.type &&
+                prix == voiture.prix && Double.compare(voiture.note, note) == 0 && type == voiture.type &&
                 marque == voiture.marque && Objects.equals(moteur, voiture.moteur) && Objects.equals(roue, voiture.roue) &&
                 entretien == voiture.entretien && Objects.equals(imatriculation, voiture.imatriculation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, marque, moteur, roue, annee, kilometrage, nbMains, note, prix, entretien, imatriculation);
+        return Objects.hash(type, marque, moteur, roue, annee, kilometrage, nbMains, prix, note, entretien, imatriculation);
     }
 
     @Override
@@ -92,30 +109,4 @@ public class Voiture {
                 "\nImatriculation= '" + imatriculation + '\'' +
                 '}';
     }
-
-
-    public static class Catalogue {
-        private String nom, auteur;
-        private int nbVoitures;
-        private ArrayList<Voiture> voitures;
-        private static Catalogue catalogue = new Catalogue();
-
-        public static Catalogue getCatalogue(){
-            Catalogue Catalogue;
-            return catalogue;
-        }
-
-
-        public void ajouterVoiture(Voiture voiture){
-            this.voitures.add(voiture);
-            System.out.println("La voiture" + voiture.getNom() + "a été ajouté au catalogue! ");
-        }
-
-    }
-
-    private String getNom() {
-        return this.getNom();
-    }
-
-
 }

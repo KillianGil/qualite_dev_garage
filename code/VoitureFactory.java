@@ -10,9 +10,9 @@ public class VoitureFactory {
                 Year.now().getValue(), 0, genImat(), Entretien.NEUVE, modele.getPrix());
     }
 
-    public static Voiture addVoiture(Modele modele) {
+    public static Voiture newVoitureOccasion(Modele modele, int annee, String imat, Entretien entretien, int prix) {
         return new Voiture(modele.getType(), modele.getMarque(), modele.getMoteur(), modele.getRoue(),
-                Year.now().getValue(), 0, genImat(), Entretien.NEUVE, modele.getPrix());
+                annee, 0, imat, entretien, prix);
     }
 
     private static String genImat(){
@@ -25,15 +25,5 @@ public class VoitureFactory {
             }
         }
         return stringBuilder.toString();
-    }
-
-    public ArrayList<Modele> listModelByMarque(Marque marque) {
-        ArrayList<Modele> modeles = new ArrayList<>();
-        for (Modele modele : Modele.values()) {
-            if (modele.getMarque().equals(marque)) {
-                modeles.add(modele);
-            }
-        }
-        return modeles;
     }
 }
