@@ -1,21 +1,16 @@
 package code ;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainTest {
     public static void main(String[] argvs) {
-        Garage garage = new Garage();
         ArrayList<Voiture> voitures = new ArrayList<>();
 
-        voitures.add(VoitureFactory.newVoiture(Modele.CENT_SIX));
-        voitures.add(VoitureFactory.newVoiture(Modele.CLASSE_G));
+        for (Modele modele: Modele.values()) {
+            voitures.add(VoitureFactory.newVoiture(modele));
+        }
 
-        garage.setCatalogue(voitures);
-        System.out.println(garage);
-
-        System.out.println(garage.filtrePrix());
-        CatalogueInterface catalogue = new CatalogueInterface(garage);
+        CatalogueInterface catalogue = new CatalogueInterface(new Garage(voitures));
         catalogue.lancelejeu();
     }
 }

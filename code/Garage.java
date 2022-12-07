@@ -9,6 +9,10 @@ public class Garage {
     public Garage() {
     }
 
+    public Garage(ArrayList<Voiture> catalogue) {
+        this.catalogue = catalogue;
+    }
+
     public void setCatalogue(ArrayList<Voiture> catalogue) {
         this.catalogue = catalogue;
     }
