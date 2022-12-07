@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainTest {
-    public static void main(String[] argvs) throws IOException {
+    public static void main(String[] argvs) {
         Garage garage = new Garage();
         ArrayList<Voiture> voitures = new ArrayList<>();
 

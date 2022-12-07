@@ -39,18 +39,4 @@ public class Roue {
                 ", Marque Pneu= " + marquePneu +
                 '}';
     }
-
-    public static class Affichage {
-        public static void openTerminal() {
-
-            try {
-                String[] cmdArray = {"gnome-terminal"};
-                Process p = Runtime.getRuntime().exec(cmdArray);
-                System.out.println("cest bon");
-            } catch (Exception e) {
-                System.out.println("Failed to open terminal: " + e.getMessage());
-            }
-
-        }
-    }
 }

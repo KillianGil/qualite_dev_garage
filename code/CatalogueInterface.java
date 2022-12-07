@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CatalogueInterface {
     private boolean menu = true;
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     Garage garage;
 
     public CatalogueInterface(Garage garage) {
@@ -56,9 +56,7 @@ public class CatalogueInterface {
                     case 1 -> System.out.println(garage);
                     case 2 -> choixFiltre();
                     case 3 -> catalogue = false;
-                    default -> {
-                        System.out.println("Veuillez choisir une option");
-                    }
+                    default -> System.out.println("Veuillez choisir une option");
                 }
             }
         }else System.out.println("Le garage est vide !");
