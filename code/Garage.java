@@ -14,6 +14,10 @@ public class Garage {
         this.catalogue = catalogue;
     }
 
+    public ArrayList<Voiture> getCatalogue() {
+        return catalogue;
+    }
+
     public void addVoiture(Voiture voiture){
         this.catalogue.add(voiture);
     }

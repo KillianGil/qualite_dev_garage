@@ -65,6 +65,10 @@ public class Voiture{
         return prix;
     }
 
+    public String getImatriculation() {
+        return imatriculation;
+    }
+
     public void setNote(){
         switch (entretien){
             case PASENTRETENUE ->  note -= 0.5;
