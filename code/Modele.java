@@ -123,7 +123,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "R8 GT";
+            return "R8_GT";
         }
     },
     A_SIX{
@@ -173,7 +173,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "SERIE 1";
+            return "SERIE_1";
         }
     },
     X_TROIS{
@@ -223,7 +223,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "500 ABARTH";
+            return "500_ABARTH";
         }
     },
     MULTIPLA{
@@ -273,7 +273,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "MUSTANG 69";
+            return "MUSTANG_69";
         }
     },
     EXPLORER{
@@ -323,7 +323,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "PRIMASTAR COMBI";
+            return "PRIMASTAR_COMBI";
         }
     },
     JUKE{
@@ -398,7 +398,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "MODEL S";
+            return "MODEL_S";
         }
     },
     MODEL_Y{
@@ -423,7 +423,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "MODEL Y";
+            return "MODEL_Y";
         }
     },
     CLASSE_C{
@@ -448,7 +448,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "CLASSE C";
+            return "CLASSE_C";
         }
     },
     CLASSE_G{
@@ -473,7 +473,7 @@ public enum Modele {
         }
 
         String nameToString() {
-            return "CLASSE G";
+            return "CLASSE_G";
         }
     },
     KANGOO{

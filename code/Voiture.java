@@ -14,7 +14,7 @@ public class Voiture{
 
     private final int annee, kilometrage, nbMains;
     private int prix;
-    private double note;
+    private double note = 5.0;
 
     private final Entretien entretien;
     private final String imatriculation;
@@ -67,7 +67,6 @@ public class Voiture{
 
     public void setNote(){
         switch (entretien){
-            case NEUVE -> note = 5;
             case PASENTRETENUE ->  note -= 0.5;
             case ABIME -> note -= 1.5;
             case EPAVE -> note -= 2.5;
@@ -110,8 +109,7 @@ public class Voiture{
 
     @Override
     public String toString() {
-        return "Voiture{" +
-                "\nType= " + type +
+        return  "\nType= " + type +
                 "\nMarque= " + marque +
                 "\n"+ moteur +
                 "\n" + roue +
@@ -122,6 +120,6 @@ public class Voiture{
                 "\nPrix= " + prix +
                 "\nEntretien= " + entretien +
                 "\nImatriculation= '" + imatriculation + '\'' +
-                '}';
+                "}\n";
     }
 }

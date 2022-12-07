@@ -12,7 +12,7 @@ public class VoitureFactory {
 
     public static Voiture newVoitureOccasion(Modele modele, int annee, int kilometrage, String imat, Entretien entretien, int prix, int nbMains) {
         return new Voiture(modele.getType(), modele.getMarque(), modele.getMoteur(), modele.getRoue(),
-                annee, 0, imat, entretien, prix, nbMains);
+                annee, kilometrage, imat, entretien, prix, nbMains);
     }
 
     private static String genImat(){

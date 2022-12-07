@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Garage {
     private ArrayList<Voiture> catalogue;
-    ArrayList<Voiture> filtre = new ArrayList<>();
+    private final ArrayList<Voiture> filtre = new ArrayList<>();
 
     public Garage() {
     }
