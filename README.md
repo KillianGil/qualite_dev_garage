@@ -32,7 +32,7 @@ Nous pouvons retrouver plusieurs fonctionnalités au seins de notre application,
 
 1. La consultation du catalogue : 
 
-Concernant la consultation du catalogue, nous laissons plusieurs choix à l'utilisateur. Nous lui proposons d’afficher le catalogue tel qu’il est de base avec toutes les voitures présentes dans le garage ainsi que leurs caractéristiques détaillées (exemple ci-dessous). 
+Concernant la consultation du catalogue, nous laissons plusieurs choix à l'utilisateur. Nous lui proposons d’afficher **le catalogue** tel qu’il est de base avec toutes les voitures présentes dans le garage ainsi que **leurs caractéristiques** détaillées (exemple ci-dessous). 
 <p align="center">
   <img src="https://www.cjoint.com/doc/22_12/LLmjctP1fJg_Capture-d’écran-2022-12-12-à-10.01.31.png" alt="Exemple Voiture Catalogue"/>
 </p>
@@ -45,18 +45,18 @@ Ou alors, dans un second choix, nous lui proposons d’appliquer différents fil
 - Par note 
 ```
 
-Après la sélection voulue, nous appliquons donc directement le filtre voulu sur le catalogue, qui s’affiche trier correctement. 
+Après la sélection voulue, nous appliquons donc directement le filtre voulu sur le catalogue, qui s’affiche **trier** correctement. 
 
 2. L'ajout d'une voiture : 
 
-La deuxième fonctionnalités implémentées dans notre application est l’ajout de voiture au garage. Pour ce faire, il suffit que l’utilisateur choisi l’option “Ajout de voiture”. Ensuite s’affiche automatiquement la liste des modèles disponibles à la création, il pourra donc ensuite rentrer chacun des paramètres de la voiture comme il le souhaite afin de créer la voiture. Toutes les caractéristiques de la voiture sont personnalisables. Enfin , la voiture sera ajoutée au catalogue du garage (exemple fourni ci-dessous). 
+La deuxième fonctionnalités implémentées dans notre application est l’ajout de voiture au garage. Pour ce faire, il suffit que l’utilisateur choisi l’option “Ajout de voiture”. Ensuite s’affiche automatiquement **la liste des modèles** disponibles à la création, il pourra donc ensuite rentrer chacun des paramètres de la voiture comme il le souhaite afin de créer la voiture. Toutes les caractéristiques de la voiture sont **personnalisables**. Enfin , la voiture sera ajoutée au catalogue du garage (exemple fourni ci-dessous). 
 <p align="center">
   <img src="https://www.cjoint.com/doc/22_12/LLmjQO42bas_Capture-d’écran-2022-12-12-à-10.40.24-2.png" alt="Exemple Création Voiture"/>
 </p>
 
 3. La suppression d'une voiture : 
 
-La dernière fonctionnalité présentée est la suppression d’une voiture. Cette fonctionnalité est nécessaire afin de pouvoir gérer correctement un garage. De ce fait, lorsque l’utilisateur sélectionne l’option voulue, la liste de toutes les voitures présentes dans le garage est affichée. Cette liste comprend le modèle de la voiture ainsi que sa plaque d’immatriculation. Afin de pouvoir supprimer une voiture, l'utilisateur doit entrer la plaque immatriculation de la voiture à supprimer et cela s'effectue automatiquement. La voiture est alors supprimée du catalogue (exemple fourni ci-dessous). 
+La dernière fonctionnalité présentée est la suppression d’une voiture. Cette fonctionnalité est nécessaire afin de pouvoir gérer correctement un garage. De ce fait, lorsque l’utilisateur sélectionne l’option voulue, la liste de toutes les voitures présentes dans le garage est affichée. Cette liste comprend **le modèle** de la voiture ainsi que **sa plaque d’immatriculation**. Afin de pouvoir supprimer une voiture, l'utilisateur doit entrer la plaque immatriculation de la voiture à supprimer et cela s'effectue automatiquement. La voiture est alors supprimée du catalogue (exemple fourni ci-dessous). 
 <p align="center">
   <img src="https://www.cjoint.com/doc/22_12/LLmj22Rkeys_Capture-d’écran-2022-12-12-à-10.54.10.png" alt="Exemple Suppression Voiture"/>
 </p>
