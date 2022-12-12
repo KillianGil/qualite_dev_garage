@@ -2,7 +2,7 @@ package code ;
 
 import java.util.ArrayList;
 
-public class MainTest {
+public class Main {
     public static void main(String[] argvs) {
         ArrayList<Voiture> voitures = new ArrayList<>();
 

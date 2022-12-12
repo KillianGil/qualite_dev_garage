@@ -1,7 +1,5 @@
 package code;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -75,7 +73,7 @@ public class CatalogueInterface {
                     """);
             switch (sc.nextInt()) {
                 case 1 -> {
-                    System.out.println("Entrer la marque souhaité ");
+                    System.out.println("Entrer la marque souhaite ");
                     Marque marqueV = null;
                     String nom = sc.next();
                     for (Marque marque : Marque.values()) {
@@ -87,7 +85,7 @@ public class CatalogueInterface {
                 case 2 -> System.out.println(garage.filtrePrix());
                 case 3 -> System.out.println(garage.filtreNote());
                 case 4 -> {
-                    System.out.println("Entrer le nombre de main souhaité ");
+                    System.out.println("Entrer le nombre de main souhaite ");
                     System.out.println(garage.filtreNbMain(sc.nextInt()));
                 }
                 case 5 -> filtre = false;
@@ -96,7 +94,7 @@ public class CatalogueInterface {
     }
 
     private void supVoiture() {
-        System.out.println("Entrée l'imatriculation de la voiture à supprimer :\n");
+        System.out.println("Entree l'imatriculation de la voiture à supprimer :\n");
         for (int i = 0; i < garage.getCatalogue().size(); i++) {
             System.out.println(garage.getCatalogue().get(i).getMarque().nameToString() + " " + garage.getCatalogue().get(i).getImatriculation());
         }
@@ -120,7 +118,7 @@ public class CatalogueInterface {
     private void newVoiture() {
         Modele modele = getModele();
 
-        int annee = getAnInt("Année de la voiture : ");
+        int annee = getAnInt("Annee de la voiture : ");
 
         int kilometrage = getAnInt("Kilometrage de la voiture : ");
 
@@ -139,7 +137,7 @@ public class CatalogueInterface {
                 1- Neuve
                 2- Entrenue
                 3- Pas entretenue
-                4- Abimé
+                4- Abime
                 5- Epave""");
         int ent = sc.nextInt();
         Entretien entretien = null;
@@ -176,7 +174,6 @@ public class CatalogueInterface {
         return integer;
     }
 
-    @NotNull
     private Modele getModele() {
         System.out.println("Liste des modèles possible :\n");
         for (Modele modele : Modele.values()) {
