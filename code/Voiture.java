@@ -5,7 +5,7 @@ import java.time.Year;
 import java.util.Objects;
 
 
-public class Voiture {
+public class Voiture implements Estimable, Notable {
     private final Type type;
     private final Marque marque;
     private final Moteur moteur;
@@ -28,9 +28,9 @@ public class Voiture {
         this.imatriculation = imatriculation;
         this.entretien = entretien;
         this.prix = prixNeuve;
-        setPrix();
+        estimer();
         this.nbMains = 0;
-        setNote();
+        noter();
     }
 
     public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation, Entretien entretien, int prixNeuve, int nbMains) {
@@ -43,9 +43,9 @@ public class Voiture {
         this.imatriculation = imatriculation;
         this.entretien = entretien;
         this.prix = prixNeuve;
-        setPrix();
+        estimer();
         this.nbMains = nbMains;
-        setNote();
+        noter();
     }
 
     public Marque getMarque() {
@@ -68,7 +68,7 @@ public class Voiture {
         return imatriculation;
     }
 
-    public void setNote() {
+    public void noter() {
         switch (entretien) {
             case PASENTRETENUE -> note -= 0.5;
             case ABIME -> note -= 1.5;
@@ -81,7 +81,7 @@ public class Voiture {
         if (nbMains > 3) note -= 0.5;
     }
 
-    public void setPrix() {
+    public void estimer() {
         if (entretien != Entretien.NEUVE) {
             if (annee + 1 == Year.now().getValue()) prix /= (int) (1 / 3);
             if (nbMains != 0) prix /= (int) (1 / 6);

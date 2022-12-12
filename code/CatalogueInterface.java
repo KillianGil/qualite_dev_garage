@@ -36,7 +36,6 @@ public class CatalogueInterface {
                 case 3 -> supVoiture();
                 default -> menu = false;
             }
-
         }
         System.out.println("Merci de votre visite\n");
     }
@@ -59,7 +58,6 @@ public class CatalogueInterface {
             }
         } else System.out.println("Le garage est vide !");
     }
-
 
     private void choixFiltre() {
         boolean filtre = true;
@@ -195,5 +193,3 @@ public class CatalogueInterface {
         return modeleV;
     }
 }
-
-
