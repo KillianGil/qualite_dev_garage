@@ -1,57 +1,57 @@
 package code;
 
 public enum Marque {
-    ALPHAROMEO{
+    ALPHAROMEO {
         String nameToString() {
             return "ALPHAROMEO";
         }
     },
-    AUDI{
+    AUDI {
         String nameToString() {
             return "AUDI";
         }
     },
-    BMW{
+    BMW {
         String nameToString() {
             return "BMW";
         }
     },
-    FIAT{
+    FIAT {
         String nameToString() {
             return "FIAT";
         }
     },
-    FORD{
+    FORD {
         String nameToString() {
             return "FORD";
         }
     },
-    NISSAN{
+    NISSAN {
         String nameToString() {
             return "NISSAN";
         }
     },
-    PEUGEOT{
+    PEUGEOT {
         String nameToString() {
             return "PEUGEOT";
         }
     },
-    TOYOTA{
+    TOYOTA {
         String nameToString() {
             return "TOYOTA";
         }
     },
-    TESLA{
+    TESLA {
         String nameToString() {
             return "TESLA";
         }
     },
-    MERCEDES{
+    MERCEDES {
         String nameToString() {
             return "MERCEDES";
         }
     },
-    RENAULT{
+    RENAULT {
         String nameToString() {
             return "RENAULT";
         }

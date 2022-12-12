@@ -1,4 +1,5 @@
 package code;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -7,14 +8,13 @@ import java.util.Scanner;
 public class CatalogueInterface {
     private boolean menu = true;
     private final Scanner sc = new Scanner(System.in);
-    Garage garage;
+    private Garage garage;
 
     public CatalogueInterface(Garage garage) {
         this.garage = garage;
     }
 
     public void lancelejeu() {
-
         while (menu) {
             System.out.println("""
                             _______
@@ -23,7 +23,7 @@ public class CatalogueInterface {
                      )  _          _    \\
                      |_/ \\________/ \\___|__| vroum vroum\s
                     ___\\_/________\\_/______
-                    
+                                        
                     1- Consulter le catalogue
                     2- Ajouter une nouvelle voiture
                     3- Supprimer une voiture
@@ -59,7 +59,7 @@ public class CatalogueInterface {
                     default -> System.out.println("Veuillez choisir une option");
                 }
             }
-        }else System.out.println("Le garage est vide !");
+        } else System.out.println("Le garage est vide !");
     }
 
 
@@ -81,7 +81,7 @@ public class CatalogueInterface {
                     for (Marque marque : Marque.values()) {
                         if (Objects.equals(marque.nameToString(), nom.toUpperCase())) marqueV = marque;
                     }
-                    if(marqueV != null) System.out.println(garage.filtreMarque(marqueV));
+                    if (marqueV != null) System.out.println(garage.filtreMarque(marqueV));
                     else System.out.println("Marque non disponible");
                 }
                 case 2 -> System.out.println(garage.filtrePrix());
@@ -96,23 +96,25 @@ public class CatalogueInterface {
     }
 
     private void supVoiture() {
-        System.out.println("Selectionné l'imatriculation de la voiture à supprimer :\n");
+        System.out.println("Entrée l'imatriculation de la voiture à supprimer :\n");
         for (int i = 0; i < garage.getCatalogue().size(); i++) {
             System.out.println(garage.getCatalogue().get(i).getMarque().nameToString() + " " + garage.getCatalogue().get(i).getImatriculation());
         }
         if (!garage.getCatalogue().isEmpty()) {
             boolean suppression = true;
             while (suppression) {
+                String imt = sc.next().toUpperCase();
                 for (Voiture voiture : garage.getCatalogue()) {
-                    if (Objects.equals(voiture.getImatriculation(), sc.next().toUpperCase())) {
+                    if (Objects.equals(voiture.getImatriculation(), imt)) {
                         garage.getCatalogue().remove(voiture);
                         System.out.println("Voiture " + voiture.getImatriculation() + " supprimer");
                         suppression = false;
                         break;
-                    } else System.out.println("Voiture introuvable");
+                    }
                 }
+                if (suppression) System.out.println("Voiture inconue");
             }
-        }else System.out.println("Le garage est vide !");
+        } else System.out.println("Le garage est vide !");
     }
 
     private void newVoiture() {
@@ -129,7 +131,7 @@ public class CatalogueInterface {
             imat = sc.next().toUpperCase();
             if (imat.matches(regex)) {
                 break;
-            }else System.out.println("Imatriculation non conforme, \"11AAA11\" attendu");
+            } else System.out.println("Imatriculation non conforme, \"11AAA11\" attendu");
         }
 
         System.out.println("""
@@ -141,7 +143,7 @@ public class CatalogueInterface {
                 5- Epave""");
         int ent = sc.nextInt();
         Entretien entretien = null;
-        switch (ent){
+        switch (ent) {
             case 1 -> entretien = Entretien.NEUVE;
             case 2 -> entretien = Entretien.ENTRETENUE;
             case 3 -> entretien = Entretien.PASENTRETENUE;
@@ -163,10 +165,10 @@ public class CatalogueInterface {
         System.out.println(x);
 
         while (true) {
-            if (sc.hasNextInt()){
+            if (sc.hasNextInt()) {
                 integer = sc.nextInt();
                 break;
-            }else {
+            } else {
                 System.out.println("Format non valable, entrer un entier");
                 sc.next();
             }
@@ -182,15 +184,15 @@ public class CatalogueInterface {
         }
         Modele modeleV = null;
         boolean choix = true;
-        while(choix) {
+        while (choix) {
             System.out.println("Modèle de la voiture : ");
             String nom = sc.next();
             for (Modele modele : Modele.values()) {
-                if (Objects.equals(modele.nameToString(), nom.toUpperCase())){
+                if (Objects.equals(modele.nameToString(), nom.toUpperCase())) {
                     modeleV = modele;
                 }
             }
-            if(modeleV != null) choix = false;
+            if (modeleV != null) choix = false;
             else System.out.println("Modèle inconnu");
         }
         return modeleV;

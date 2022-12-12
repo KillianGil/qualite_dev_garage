@@ -5,7 +5,7 @@ import java.time.Year;
 import java.util.Objects;
 
 
-public class Voiture{
+public class Voiture {
     private final Type type;
     private final Marque marque;
     private final Moteur moteur;
@@ -68,28 +68,28 @@ public class Voiture{
         return imatriculation;
     }
 
-    public void setNote(){
-        switch (entretien){
-            case PASENTRETENUE ->  note -= 0.5;
+    public void setNote() {
+        switch (entretien) {
+            case PASENTRETENUE -> note -= 0.5;
             case ABIME -> note -= 1.5;
             case EPAVE -> note -= 2.5;
         }
         if (kilometrage > 100000) note -= 0.5;
         else if (kilometrage > 80000) note -= 1;
-        else if (kilometrage > 40000) note -=1.5;
+        else if (kilometrage > 40000) note -= 1.5;
 
         if (nbMains > 3) note -= 0.5;
     }
 
-    public void setPrix(){
-        if(entretien != Entretien.NEUVE){
-            if(annee + 1 == Year.now().getValue()) prix /= (int)(1 /3);
-            if(nbMains != 0) prix /= (int)(1 /6);
-            switch ((int) note){
-                case 4 -> prix /= (int)(1 /6);
-                case 3 -> prix /= (int)(2 /6);
-                case 2 -> prix /= (int)(1 /2);
-                case 1, 0 -> prix /= (int)(4 /6);
+    public void setPrix() {
+        if (entretien != Entretien.NEUVE) {
+            if (annee + 1 == Year.now().getValue()) prix /= (int) (1 / 3);
+            if (nbMains != 0) prix /= (int) (1 / 6);
+            switch ((int) note) {
+                case 4 -> prix /= (int) (1 / 6);
+                case 3 -> prix /= (int) (2 / 6);
+                case 2 -> prix /= (int) (1 / 2);
+                case 1, 0 -> prix /= (int) (4 / 6);
             }
         }
     }
@@ -112,9 +112,9 @@ public class Voiture{
 
     @Override
     public String toString() {
-        return  "\nType= " + type +
+        return "\nType= " + type +
                 "\nMarque= " + marque +
-                "\n"+ moteur +
+                "\n" + moteur +
                 "\n" + roue +
                 "\nAnnee= " + annee +
                 "\nKilometrage= " + kilometrage +

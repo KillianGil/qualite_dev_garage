@@ -1,7 +1,7 @@
 package code;
 
 public enum Modele {
-    CENT_SIX{
+    CENT_SIX {
         Marque getMarque() {
             return Marque.PEUGEOT;
         }
@@ -10,7 +10,7 @@ public enum Modele {
             return new Roue(Jante.TREIZE_POUCES, MarquePneu.MICHELIN);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.BERLINE;
         }
 
@@ -26,7 +26,7 @@ public enum Modele {
             return "106";
         }
     },
-    TROIS_CENT_HUIT{
+    TROIS_CENT_HUIT {
         Marque getMarque() {
             return Marque.PEUGEOT;
         }
@@ -35,7 +35,7 @@ public enum Modele {
             return new Roue(Jante.SEIZE_POUCES, MarquePneu.MICHELIN);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.BERLINE;
         }
 
@@ -51,7 +51,7 @@ public enum Modele {
             return "308";
         }
     },
-    MILLE_SEPT_CENT_CINQUANTE{
+    MILLE_SEPT_CENT_CINQUANTE {
         Marque getMarque() {
             return Marque.ALPHAROMEO;
         }
@@ -60,7 +60,7 @@ public enum Modele {
             return new Roue(Jante.QUATORZE_POUCES, MarquePneu.PIRELLI);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.BERLINE;
         }
 
@@ -76,7 +76,7 @@ public enum Modele {
             return "1750";
         }
     },
-    GIULIA{
+    GIULIA {
         Marque getMarque() {
             return Marque.ALPHAROMEO;
         }
@@ -85,14 +85,14 @@ public enum Modele {
             return new Roue(Jante.DIX_HUIT_POUCES, MarquePneu.PIRELLI);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.BERLINE;
         }
 
         Moteur getMoteur() {
             return new Moteur(11, 200, 9.2, Propultion.ESSENCE);
         }
-        
+
         int getPrix() {
             return 48089;
         }
@@ -101,7 +101,7 @@ public enum Modele {
             return "GIULIA";
         }
     },
-    R_HUIT_GT{
+    R_HUIT_GT {
         Marque getMarque() {
             return Marque.AUDI;
         }
@@ -110,14 +110,14 @@ public enum Modele {
             return new Roue(Jante.VINGT_POUCES, MarquePneu.BRIDGESTONE);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.COUPE;
         }
 
         Moteur getMoteur() {
             return new Moteur(49, 620, 15, Propultion.ESSENCE);
         }
-        
+
         int getPrix() {
             return 245000;
         }
@@ -126,7 +126,7 @@ public enum Modele {
             return "R8_GT";
         }
     },
-    A_SIX{
+    A_SIX {
         Marque getMarque() {
             return Marque.AUDI;
         }
@@ -135,14 +135,14 @@ public enum Modele {
             return new Roue(Jante.DIX_SEPT_POUCES, MarquePneu.CONTINANTAL);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.BERLINE;
         }
 
         Moteur getMoteur() {
             return new Moteur(7, 136, 8.3, Propultion.DIESEL);
         }
-        
+
         int getPrix() {
             return 59080;
         }
@@ -151,7 +151,7 @@ public enum Modele {
             return "A6";
         }
     },
-    SERIE_UN{
+    SERIE_UN {
         Marque getMarque() {
             return Marque.BMW;
         }
@@ -160,14 +160,14 @@ public enum Modele {
             return new Roue(Jante.DIX_HUIT_POUCES, MarquePneu.CONTINANTAL);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.COUPE;
         }
 
         Moteur getMoteur() {
             return new Moteur(15, 265, 7, Propultion.ESSENCE);
         }
-        
+
         int getPrix() {
             return 30200;
         }
@@ -176,7 +176,7 @@ public enum Modele {
             return "SERIE_1";
         }
     },
-    X_TROIS{
+    X_TROIS {
         Marque getMarque() {
             return Marque.BMW;
         }
@@ -185,14 +185,14 @@ public enum Modele {
             return new Roue(Jante.VINGT_POUCES, MarquePneu.CONTINANTAL);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.SUV;
         }
 
         Moteur getMoteur() {
             return new Moteur(16, 265, 9.3, Propultion.ESSENCE);
         }
-        
+
         int getPrix() {
             return 52100;
         }
@@ -201,7 +201,7 @@ public enum Modele {
             return "X3";
         }
     },
-    CINQ_CENT_ABARTH{
+    CINQ_CENT_ABARTH {
         Marque getMarque() {
             return Marque.FIAT;
         }
@@ -210,14 +210,14 @@ public enum Modele {
             return new Roue(Jante.DIX_SEPT_POUCES, MarquePneu.PIRELLI);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.SPORT;
         }
 
         Moteur getMoteur() {
             return new Moteur(9, 160, 6.6, Propultion.ESSENCE);
         }
-        
+
         int getPrix() {
             return 28200;
         }
@@ -226,7 +226,7 @@ public enum Modele {
             return "500_ABARTH";
         }
     },
-    MULTIPLA{
+    MULTIPLA {
         Marque getMarque() {
             return Marque.FIAT;
         }
@@ -235,14 +235,14 @@ public enum Modele {
             return new Roue(Jante.QUINZE_POUCES, MarquePneu.PIRELLI);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.FOURGONNETTE;
         }
 
         Moteur getMoteur() {
             return new Moteur(7, 120, 1.9, Propultion.DIESEL);
         }
-        
+
         int getPrix() {
             return 3400;
         }
@@ -251,7 +251,7 @@ public enum Modele {
             return "MULTIPLA";
         }
     },
-    MUSTANG_SOIXANTE_NEUF{
+    MUSTANG_SOIXANTE_NEUF {
         Marque getMarque() {
             return Marque.FORD;
         }
@@ -260,14 +260,14 @@ public enum Modele {
             return new Roue(Jante.QUINZE_POUCES, MarquePneu.CONTINANTAL);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.SPORT;
         }
 
         Moteur getMoteur() {
             return new Moteur(27, 330, 17.7, Propultion.ESSENCE);
         }
-        
+
         int getPrix() {
             return 65990;
         }
@@ -276,7 +276,7 @@ public enum Modele {
             return "MUSTANG_69";
         }
     },
-    EXPLORER{
+    EXPLORER {
         Marque getMarque() {
             return Marque.FORD;
         }
@@ -285,14 +285,14 @@ public enum Modele {
             return new Roue(Jante.VINGT_POUCES, MarquePneu.CONTINANTAL);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.SUV;
         }
 
         Moteur getMoteur() {
             return new Moteur(32, 457, 3.1, Propultion.HYBRIDE);
         }
-        
+
         int getPrix() {
             return 86400;
         }
@@ -301,7 +301,7 @@ public enum Modele {
             return "EXPLORER";
         }
     },
-    PRIMASTAR_COMBI{
+    PRIMASTAR_COMBI {
         Marque getMarque() {
             return Marque.NISSAN;
         }
@@ -310,14 +310,14 @@ public enum Modele {
             return new Roue(Jante.SEIZE_POUCES, MarquePneu.GOODYEAR);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.MINIBUS;
         }
 
         Moteur getMoteur() {
             return new Moteur(8, 150, 7.2, Propultion.DIESEL);
         }
-        
+
         int getPrix() {
             return 24675;
         }
@@ -326,7 +326,7 @@ public enum Modele {
             return "PRIMASTAR_COMBI";
         }
     },
-    JUKE{
+    JUKE {
         Marque getMarque() {
             return Marque.NISSAN;
         }
@@ -335,14 +335,14 @@ public enum Modele {
             return new Roue(Jante.DIX_NEUF_POUCES, MarquePneu.GOODYEAR);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.BREAK;
         }
 
         Moteur getMoteur() {
             return new Moteur(6, 114, 5.8, Propultion.SP95);
         }
-        
+
         int getPrix() {
             return 22190;
         }
@@ -351,7 +351,7 @@ public enum Modele {
             return "JUKE";
         }
     },
-    YARIS{
+    YARIS {
         Marque getMarque() {
             return Marque.TOYOTA;
         }
@@ -360,14 +360,14 @@ public enum Modele {
             return new Roue(Jante.SEIZE_POUCES, MarquePneu.GOODYEAR);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.BERLINE;
         }
 
         Moteur getMoteur() {
             return new Moteur(4, 92, 5.7, Propultion.SP95);
         }
-        
+
         int getPrix() {
             return 18650;
         }
@@ -376,7 +376,7 @@ public enum Modele {
             return "YARIS";
         }
     },
-    MODEL_S{
+    MODEL_S {
         Marque getMarque() {
             return Marque.TESLA;
         }
@@ -385,14 +385,14 @@ public enum Modele {
             return new Roue(Jante.DIX_NEUF_POUCES, MarquePneu.CONTINANTAL);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.SPORT;
         }
 
         Moteur getMoteur() {
             return new Moteur(4, 1020, 0, Propultion.ELECTRIQUE);
         }
-        
+
         int getPrix() {
             return 138990;
         }
@@ -401,7 +401,7 @@ public enum Modele {
             return "MODEL_S";
         }
     },
-    MODEL_Y{
+    MODEL_Y {
         Marque getMarque() {
             return Marque.TESLA;
         }
@@ -410,14 +410,14 @@ public enum Modele {
             return new Roue(Jante.DIX_NEUF_POUCES, MarquePneu.CONTINANTAL);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.SUV;
         }
 
         Moteur getMoteur() {
             return new Moteur(11, 462, 0, Propultion.ELECTRIQUE);
         }
-        
+
         int getPrix() {
             return 49990;
         }
@@ -426,7 +426,7 @@ public enum Modele {
             return "MODEL_Y";
         }
     },
-    CLASSE_C{
+    CLASSE_C {
         Marque getMarque() {
             return Marque.MERCEDES;
         }
@@ -435,14 +435,14 @@ public enum Modele {
             return new Roue(Jante.DIX_HUIT_POUCES, MarquePneu.BRIDGESTONE);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.BERLINE;
         }
 
         Moteur getMoteur() {
             return new Moteur(11, 204, 6.5, Propultion.HYBRIDE);
         }
-        
+
         int getPrix() {
             return 58000;
         }
@@ -451,7 +451,7 @@ public enum Modele {
             return "CLASSE_C";
         }
     },
-    CLASSE_G{
+    CLASSE_G {
         Marque getMarque() {
             return Marque.MERCEDES;
         }
@@ -460,14 +460,14 @@ public enum Modele {
             return new Roue(Jante.DIX_HUIT_POUCES, MarquePneu.BRIDGESTONE);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.SUV;
         }
 
         Moteur getMoteur() {
             return new Moteur(17, 245, 9.9, Propultion.DIESEL);
         }
-        
+
         int getPrix() {
             return 149650;
         }
@@ -476,7 +476,7 @@ public enum Modele {
             return "CLASSE_G";
         }
     },
-    KANGOO{
+    KANGOO {
         Marque getMarque() {
             return Marque.RENAULT;
         }
@@ -485,14 +485,14 @@ public enum Modele {
             return new Roue(Jante.QUINZE_POUCES, MarquePneu.MICHELIN);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.FOURGONNETTE;
         }
 
         Moteur getMoteur() {
             return new Moteur(7, 114, 6.2, Propultion.ESSENCE);
         }
-        
+
         int getPrix() {
             return 25900;
         }
@@ -501,7 +501,7 @@ public enum Modele {
             return "KANGOO";
         }
     },
-    ARKANA{
+    ARKANA {
         Marque getMarque() {
             return Marque.RENAULT;
         }
@@ -510,14 +510,14 @@ public enum Modele {
             return new Roue(Jante.DIX_HUIT_POUCES, MarquePneu.MICHELIN);
         }
 
-        Type getType(){
+        Type getType() {
             return Type.CROSSOVER;
         }
 
         Moteur getMoteur() {
             return new Moteur(7, 140, 4.9, Propultion.ESSENCE);
         }
-        
+
         int getPrix() {
             return 31300;
         }
@@ -526,7 +526,6 @@ public enum Modele {
             return "ARKANA";
         }
     };
-
 
 
     abstract Moteur getMoteur();
@@ -538,6 +537,6 @@ public enum Modele {
     abstract Roue getRoue();
 
     abstract int getPrix();
-    
+
     abstract String nameToString();
 }

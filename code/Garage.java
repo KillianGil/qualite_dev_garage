@@ -21,10 +21,11 @@ public class Garage {
         return catalogue;
     }
 
-    public void addVoiture(Voiture voiture){
+    public void addVoiture(Voiture voiture) {
         this.catalogue.add(voiture);
     }
-    public ArrayList<Voiture> filtreMarque(Marque marque){
+
+    public ArrayList<Voiture> filtreMarque(Marque marque) {
         filtre.clear();
         for (Voiture voiture : catalogue) {
             if (voiture.getMarque().equals(marque)) filtre.add(voiture);
@@ -32,7 +33,7 @@ public class Garage {
         return filtre;
     }
 
-    public ArrayList<Voiture> filtrePrix(){
+    public ArrayList<Voiture> filtrePrix() {
         filtre.clear();
         filtre.add(catalogue.get(0));
         for (int i = 0; i < catalogue.size(); ++i) {
@@ -41,14 +42,13 @@ public class Garage {
                 if (catalogue.get(j).getPrix() >= filtre.get(index).getPrix()) {
                     filtre.add(0, catalogue.get(j));
                     index = j;
-                }
-                else filtre.add(catalogue.get(j));
+                } else filtre.add(catalogue.get(j));
             }
         }
         return filtre;
     }
 
-    public ArrayList<Voiture> filtreNote(){
+    public ArrayList<Voiture> filtreNote() {
         filtre.clear();
         filtre.add(catalogue.get(0));
         for (int i = 0; i < catalogue.size(); ++i) {
@@ -57,14 +57,13 @@ public class Garage {
                 if (catalogue.get(j).getNote() >= filtre.get(index).getNote()) {
                     filtre.add(0, catalogue.get(j));
                     index = j;
-                }
-                else filtre.add(catalogue.get(j));
+                } else filtre.add(catalogue.get(j));
             }
         }
         return filtre;
     }
 
-    public ArrayList<Voiture> filtreNbMain(int nbMain){
+    public ArrayList<Voiture> filtreNbMain(int nbMain) {
         filtre.clear();
         for (Voiture voiture : catalogue) {
             if (voiture.getNbMains() == nbMain) filtre.add(voiture);
