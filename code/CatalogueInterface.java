@@ -23,21 +23,111 @@ public class CatalogueInterface {
                     ___\\_/________\\_/______
                                         
                     1- Consulter le catalogue
-                    2- Ajouter une nouvelle voiture
+                    2- Ajouter une voiture
                     3- Supprimer une voiture
-                    4- Pour quitter le garage
+                    4- Modifier une voiture
+                    5- Quitter le garage
                     Rentrer le chiffre de votre choix :
                     """);
 
-            int choix = sc.nextInt();
-            switch (choix) {
+            switch (sc.nextInt()) {
                 case 1 -> catalogue();
                 case 2 -> newVoiture();
                 case 3 -> supVoiture();
+                case 4 -> modifVoiture();
                 default -> menu = false;
             }
         }
         System.out.println("Merci de votre visite\n");
+    }
+
+    private void modifVoiture() {
+        afficherImat("modifier");
+        if (!garage.getCatalogue().isEmpty()) {
+            Voiture voiture;
+            while (true) {
+                voiture = garage.getVoitureByImat(sc.next().toUpperCase());
+                if (voiture != null){
+                        System.out.println("""
+                                1- Modifier roue
+                                2- Modifier nombre de mains
+                                3- Modifier prix
+                                4- Modifier l'entretien
+                                """);
+                        switch (sc.nextInt()){
+                            case 1 -> modifRoue(voiture);
+                            case 2 -> modifNbMains(voiture);
+                            case 3 -> modifPrix(voiture);
+                            case 4 -> modifEntretien(voiture);
+                        }
+                        break;
+                }else System.out.println("Voiture inconue");
+            }
+        }else System.out.println("Le garage est vide !");
+    }
+
+    private void modifEntretien(Voiture voiture) {
+        System.out.println("Entretient actuel : " + voiture.getEntretien());
+        System.out.println("Liste des Entretien possible :\n");
+        for (Entretien entretien : Entretien.values()) {
+            System.out.println(entretien.nameToString() + ", ");
+        }
+
+        Entretien entretien;
+        while (true) {
+            System.out.println("Marque des pneux souhaité : ");
+            entretien = Entretien.findEntretien(sc.next().toUpperCase());
+            if(entretien != null) break;
+            else System.out.println("Entretien inconnu");
+        }
+
+        voiture.setEntretien(entretien);
+        System.out.println("Entretien modifie avec succes");
+    }
+
+    private void modifPrix(Voiture voiture) {
+        System.out.println("Prix actuel : " + voiture.getPrix() + "\nCombien souhaité vous la vendre ?");
+        voiture.setPrix(sc.nextInt());
+        System.out.println("Prix modifie avec succes");
+    }
+
+    private void modifNbMains(Voiture voiture) {
+        System.out.println("Nombre de mains actuel : " + voiture.getNbMains() + "\nCombien souhaité vous en mettre ?");
+        voiture.setNbMains(sc.nextInt());
+        System.out.println("Nombre de mains modifie avec succes");
+    }
+
+
+    private void modifRoue(Voiture voiture) {
+        System.out.println("Roue actuel : " + voiture.getRoue());
+        System.out.println("Liste des marques de pneu disponible :\n");
+        for (MarquePneu marquePneu : MarquePneu.values()) {
+            System.out.println(marquePneu.nameToString() + ", ");
+        }
+
+        MarquePneu marquePneu;
+        while (true) {
+            System.out.println("Marque des pneux souhaité : ");
+            marquePneu = MarquePneu.findMarquePneu(sc.next().toUpperCase());
+            if(marquePneu != null) break;
+            else System.out.println("Modèle inconnu");
+        }
+
+        System.out.println("Liste des taille de jantes disponible :\n");
+        for (Jante jante : Jante.values()) {
+            System.out.println(jante.nameToString() + ", ");
+        }
+
+        Jante jante;
+        while (true){
+            System.out.println("Taille des jantes souhaité: ");
+            jante = Jante.findJante(sc.next().toUpperCase());
+            if(jante != null) break;
+            else System.out.println("Taille inconnu");
+        }
+
+        voiture.setRoue(new Roue(jante, marquePneu));
+        System.out.println("Roue modifie avec succes");
     }
 
     private void catalogue() {
@@ -92,25 +182,24 @@ public class CatalogueInterface {
     }
 
     private void supVoiture() {
-        System.out.println("Entree l'imatriculation de la voiture à supprimer :\n");
+        afficherImat("supprimer");
+        if (!garage.getCatalogue().isEmpty()) {
+            while (true) {
+                Voiture voiture = garage.getVoitureByImat(sc.next().toUpperCase());
+                if (voiture != null) {
+                    garage.removeVoiture(voiture);
+                    System.out.println("Voiture " + voiture.getImatriculation() + " supprimer");
+                    break;
+                }else System.out.println("Voiture inconue");
+            }
+        } else System.out.println("Le garage est vide !");
+    }
+
+    private void afficherImat(String x) {
+        System.out.println("Entree l'imatriculation de la voiture à " + x + " :\n");
         for (int i = 0; i < garage.getCatalogue().size(); i++) {
             System.out.println(garage.getCatalogue().get(i).getMarque().nameToString() + " " + garage.getCatalogue().get(i).getImatriculation());
         }
-        if (!garage.getCatalogue().isEmpty()) {
-            boolean suppression = true;
-            while (suppression) {
-                String imt = sc.next().toUpperCase();
-                for (Voiture voiture : garage.getCatalogue()) {
-                    if (Objects.equals(voiture.getImatriculation(), imt)) {
-                        garage.getCatalogue().remove(voiture);
-                        System.out.println("Voiture " + voiture.getImatriculation() + " supprimer");
-                        suppression = false;
-                        break;
-                    }
-                }
-                if (suppression) System.out.println("Voiture inconue");
-            }
-        } else System.out.println("Le garage est vide !");
     }
 
     private void newVoiture() {

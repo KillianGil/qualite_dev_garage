@@ -132,7 +132,7 @@ public enum Modele {
         }
 
         Roue getRoue() {
-            return new Roue(Jante.DIX_SEPT_POUCES, MarquePneu.CONTINANTAL);
+            return new Roue(Jante.DIX_SEPT_POUCES, MarquePneu.CONTINENTAL);
         }
 
         Type getType() {
@@ -157,7 +157,7 @@ public enum Modele {
         }
 
         Roue getRoue() {
-            return new Roue(Jante.DIX_HUIT_POUCES, MarquePneu.CONTINANTAL);
+            return new Roue(Jante.DIX_HUIT_POUCES, MarquePneu.CONTINENTAL);
         }
 
         Type getType() {
@@ -182,7 +182,7 @@ public enum Modele {
         }
 
         Roue getRoue() {
-            return new Roue(Jante.VINGT_POUCES, MarquePneu.CONTINANTAL);
+            return new Roue(Jante.VINGT_POUCES, MarquePneu.CONTINENTAL);
         }
 
         Type getType() {
@@ -257,7 +257,7 @@ public enum Modele {
         }
 
         Roue getRoue() {
-            return new Roue(Jante.QUINZE_POUCES, MarquePneu.CONTINANTAL);
+            return new Roue(Jante.QUINZE_POUCES, MarquePneu.CONTINENTAL);
         }
 
         Type getType() {
@@ -282,7 +282,7 @@ public enum Modele {
         }
 
         Roue getRoue() {
-            return new Roue(Jante.VINGT_POUCES, MarquePneu.CONTINANTAL);
+            return new Roue(Jante.VINGT_POUCES, MarquePneu.CONTINENTAL);
         }
 
         Type getType() {
@@ -382,7 +382,7 @@ public enum Modele {
         }
 
         Roue getRoue() {
-            return new Roue(Jante.DIX_NEUF_POUCES, MarquePneu.CONTINANTAL);
+            return new Roue(Jante.DIX_NEUF_POUCES, MarquePneu.CONTINENTAL);
         }
 
         Type getType() {
@@ -407,7 +407,7 @@ public enum Modele {
         }
 
         Roue getRoue() {
-            return new Roue(Jante.DIX_NEUF_POUCES, MarquePneu.CONTINANTAL);
+            return new Roue(Jante.DIX_NEUF_POUCES, MarquePneu.CONTINENTAL);
         }
 
         Type getType() {

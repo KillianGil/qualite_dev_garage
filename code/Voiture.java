@@ -9,13 +9,13 @@ public class Voiture implements Estimable, Notable {
     private final Type type;
     private final Marque marque;
     private final Moteur moteur;
-    private final Roue roue;
+    private Roue roue;
 
-    private final int annee, kilometrage, nbMains;
-    private int prix;
+    private final int annee, kilometrage;
+    private int prix, nbMains;
     private double note = 5.0;
 
-    private final Entretien entretien;
+    private Entretien entretien;
     private final String imatriculation;
 
     public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation, Entretien entretien, int prixNeuve) {
@@ -64,8 +64,32 @@ public class Voiture implements Estimable, Notable {
         return prix;
     }
 
+    public Roue getRoue() {
+        return roue;
+    }
+
+    public Entretien getEntretien() {
+        return entretien;
+    }
+
     public String getImatriculation() {
         return imatriculation;
+    }
+
+    public void setRoue(Roue roue) {
+        this.roue = roue;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
+
+    public void setNbMains(int nbMains) {
+        this.nbMains = nbMains;
+    }
+
+    public void setEntretien(Entretien entretien) {
+        this.entretien = entretien;
     }
 
     public void noter() {
@@ -83,13 +107,13 @@ public class Voiture implements Estimable, Notable {
 
     public void estimer() {
         if (entretien != Entretien.NEUVE) {
-            if (annee + 1 == Year.now().getValue()) prix /= (int) (1 / 3);
-            if (nbMains != 0) prix /= (int) (1 / 6);
+            if (annee + 1 == Year.now().getValue()) prix -= prix/3;
+            if (nbMains != 0) prix -= prix/6;
             switch ((int) note) {
-                case 4 -> prix /= (int) (1 / 6);
-                case 3 -> prix /= (int) (2 / 6);
-                case 2 -> prix /= (int) (1 / 2);
-                case 1, 0 -> prix /= (int) (4 / 6);
+                case 4 -> prix -= prix/6;
+                case 3 -> prix -= 2 * prix/6;
+                case 2 -> prix -= prix/2;
+                case 1, 0 -> prix -= 4 * prix/6;
             }
         }
     }

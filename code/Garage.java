@@ -1,6 +1,7 @@
 package code;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Garage {
     private ArrayList<Voiture> catalogue;
@@ -23,6 +24,17 @@ public class Garage {
 
     public void addVoiture(Voiture voiture) {
         this.catalogue.add(voiture);
+    }
+
+    public void removeVoiture(Voiture voiture){this.catalogue.remove(voiture);}
+
+    public Voiture getVoitureByImat(String imat){
+        for (Voiture voiture : this.catalogue) {
+            if (Objects.equals(voiture.getImatriculation(), imat)) {
+                return voiture;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Voiture> filtreMarque(Marque marque) {
