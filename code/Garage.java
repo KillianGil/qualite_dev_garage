@@ -2,6 +2,7 @@ package code;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Garage {
     private ArrayList<Voiture> catalogue;
@@ -35,6 +36,17 @@ public class Garage {
             }
         }
         return null;
+    }
+
+    public Voiture chooseVoitureByImat(Scanner sc){
+        Voiture voiture;
+        while(true) {
+            System.out.println("Entrer l'imatriculation de la voiture souhaite ");
+            voiture = getVoitureByImat(sc.next().toUpperCase());
+            if (voiture != null) break;
+            else System.out.println("Voiture non disponible");
+        }
+        return voiture;
     }
 
     public ArrayList<Voiture> filtreMarque(Marque marque) {

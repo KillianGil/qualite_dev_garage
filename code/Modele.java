@@ -560,10 +560,10 @@ public enum Modele {
 
         Modele modele;
         while (true) {
-            System.out.println("Entretien souhaité : ");
+            System.out.println("Modele souhaité : ");
             modele = Modele.findModele(sc.next().toUpperCase());
             if(modele != null) break;
-            else System.out.println("Entretien inconnu");
+            else System.out.println("Modele inconnu");
         }
         return modele;
     }

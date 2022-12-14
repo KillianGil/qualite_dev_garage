@@ -11,15 +11,26 @@ public class CatalogueInterface {
     }
 
     public void menu() {
-        boolean menu = true;
-        while (menu) {
-            System.out.println("""
-                            _______
+        System.out.println("""
+                            _________
                            //  ||\\ \\
                      _____//___||_\\ \\___
                      )  _          _    \\
                      |_/ \\________/ \\___|__| vroum vroum\s
                     ___\\_/________\\_/______
+                """);
+        boolean menu = true;
+        while (menu) {
+            System.out.println("""
+                      _____                                  _        _ _ _       _  \s
+                      / ____|                                | |      | ( |_)     | | \s
+                     | |  __  __ _ _ __ __ _  __ _  ___    __| | ___  | |/ _ _   _| |_\s
+                     | | |_ |/ _` | '__/ _` |/ _` |/ _ \\  / _` |/ _ \\ | | | | | | | __|
+                     | |__| | (_| | | | (_| | (_| |  __/ | (_| |  __/ | | | | |_| | |_\s
+                      \\_____|\\__,_|_|  \\__,_|\\__, |\\___|  \\__,_|\\___| |_| |_|\\__,_|\\__|
+                                              __/ |                                   \s
+                                             |___/\s
+                                           
                                         
                     1- Consulter le catalogue
                     2- Ajouter une voiture
@@ -43,25 +54,24 @@ public class CatalogueInterface {
     private void modifVoiture() {
         afficherImat("modifier");
         if (!garage.getCatalogue().isEmpty()) {
-            Voiture voiture;
-            while (true) {
-                voiture = garage.getVoitureByImat(sc.next().toUpperCase());
-                if (voiture != null){
-                        System.out.println("""
-                                1- Modifier roue
-                                2- Modifier nombre de mains
-                                3- Modifier prix
-                                4- Modifier l'entretien
-                                """);
-                        switch (sc.nextInt()){
-                            case 1 -> modifRoue(voiture);
-                            case 2 -> modifNbMains(voiture);
-                            case 3 -> modifPrix(voiture);
-                            case 4 -> modifEntretien(voiture);
-                        }
-                        break;
-                }else System.out.println("Voiture inconue");
-            }
+            Voiture voiture = garage.chooseVoitureByImat(sc);
+                boolean modif = true;
+                while (modif) {
+                    System.out.println("""
+                            1- Modifier roue
+                            2- Modifier nombre de mains
+                            3- Modifier prix
+                            4- Modifier l'entretien
+                            5- Retour au menu
+                            """);
+                    switch (sc.nextInt()){
+                        case 1 -> modifRoue(voiture);
+                        case 2 -> modifNbMains(voiture);
+                        case 3 -> modifPrix(voiture);
+                        case 4 -> modifEntretien(voiture);
+                        case 5 -> modif = false;
+                    }
+                }
         }else System.out.println("Le garage est vide !");
     }
 
@@ -181,8 +191,6 @@ public class CatalogueInterface {
         garage.addVoiture(newV);
         System.out.println(newV);
     }
-
-
 
     private int getAnInt(String x) {
         int integer;
