@@ -1,25 +1,30 @@
 package code;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class CatalogueInterface {
+    private boolean menu = true;
     private final Scanner sc = new Scanner(System.in);
-    private final Garage garage;
+    private Garage garage;
 
     public CatalogueInterface(Garage garage) {
         this.garage = garage;
     }
 
-    public void menu() {
-        boolean menu = true;
+    public void lancelejeu() {
         while (menu) {
             System.out.println("""
-                            _______
-                           //  ||\\ \\
-                     _____//___||_\\ \\___
-                     )  _          _    \\
-                     |_/ \\________/ \\___|__| vroum vroum\s
-                    ___\\_/________\\_/______
+                                        
+                       _____                                  _        _ _ _       _  \s
+                      / ____|                                | |      | ( |_)     | | \s
+                     | |  __  __ _ _ __ __ _  __ _  ___    __| | ___  | |/ _ _   _| |_\s
+                     | | |_ |/ _` | '__/ _` |/ _` |/ _ \\  / _` |/ _ \\ | | | | | | | __|
+                     | |__| | (_| | | | (_| | (_| |  __/ | (_| |  __/ | | | | |_| | |_\s
+                      \\_____|\\__,_|_|  \\__,_|\\__, |\\___|  \\__,_|\\___| |_| |_|\\__,_|\\__|
+                                              __/ |                                   \s
+                                             |___/                                    \s
+                                        
                                         
                     1- Consulter le catalogue
                     2- Ajouter une voiture
@@ -67,7 +72,20 @@ public class CatalogueInterface {
 
     private void modifEntretien(Voiture voiture) {
         System.out.println("Entretient actuel : " + voiture.getEntretien());
-        voiture.setEntretien(Entretien.chooseEntretien(sc));
+        System.out.println("Liste des Entretien possible :\n");
+        for (Entretien entretien : Entretien.values()) {
+            System.out.println(entretien.nameToString() + ", ");
+        }
+
+        Entretien entretien;
+        while (true) {
+            System.out.println("Marque des pneux souhaité : ");
+            entretien = Entretien.findEntretien(sc.next().toUpperCase());
+            if(entretien != null) break;
+            else System.out.println("Entretien inconnu");
+        }
+
+        voiture.setEntretien(entretien);
         System.out.println("Entretien modifie avec succes");
     }
 
@@ -86,7 +104,33 @@ public class CatalogueInterface {
 
     private void modifRoue(Voiture voiture) {
         System.out.println("Roue actuel : " + voiture.getRoue());
-        voiture.setRoue(new Roue(Jante.chooseJante(sc), MarquePneu.chooseMarquePneu(sc)));
+        System.out.println("Liste des marques de pneu disponible :\n");
+        for (MarquePneu marquePneu : MarquePneu.values()) {
+            System.out.println(marquePneu.nameToString() + ", ");
+        }
+
+        MarquePneu marquePneu;
+        while (true) {
+            System.out.println("Marque des pneux souhaité : ");
+            marquePneu = MarquePneu.findMarquePneu(sc.next().toUpperCase());
+            if(marquePneu != null) break;
+            else System.out.println("Modèle inconnu");
+        }
+
+        System.out.println("Liste des taille de jantes disponible :\n");
+        for (Jante jante : Jante.values()) {
+            System.out.println(jante.nameToString() + ", ");
+        }
+
+        Jante jante;
+        while (true){
+            System.out.println("Taille des jantes souhaité: ");
+            jante = Jante.findJante(sc.next().toUpperCase());
+            if(jante != null) break;
+            else System.out.println("Taille inconnu");
+        }
+
+        voiture.setRoue(new Roue(jante, marquePneu));
         System.out.println("Roue modifie avec succes");
     }
 
@@ -120,7 +164,16 @@ public class CatalogueInterface {
                     5- Retour au menu
                     """);
             switch (sc.nextInt()) {
-                case 1 -> System.out.println(garage.filtreMarque(Marque.chooseMarque(sc)));
+                case 1 -> {
+                    System.out.println("Entrer la marque souhaite ");
+                    Marque marqueV = null;
+                    String nom = sc.next();
+                    for (Marque marque : Marque.values()) {
+                        if (Objects.equals(marque.nameToString(), nom.toUpperCase())) marqueV = marque;
+                    }
+                    if (marqueV != null) System.out.println(garage.filtreMarque(marqueV));
+                    else System.out.println("Marque non disponible");
+                }
                 case 2 -> System.out.println(garage.filtrePrix());
                 case 3 -> System.out.println(garage.filtreNote());
                 case 4 -> {
@@ -128,7 +181,6 @@ public class CatalogueInterface {
                     System.out.println(garage.filtreNbMain(sc.nextInt()));
                 }
                 case 5 -> filtre = false;
-                default -> System.out.println("Veuillez choisir une option");
             }
         }
     }
@@ -155,7 +207,7 @@ public class CatalogueInterface {
     }
 
     private void newVoiture() {
-        Modele modele = Modele.chooseModele(sc);
+        Modele modele = getModele();
 
         int annee = getAnInt("Annee de la voiture : ");
 
@@ -171,7 +223,22 @@ public class CatalogueInterface {
             } else System.out.println("Imatriculation non conforme, \"11AAA11\" attendu");
         }
 
-        Entretien entretien = Entretien.chooseEntretien(sc);
+        System.out.println("""
+                Entretien de la voiture :\s
+                1- Neuve
+                2- Entrenue
+                3- Pas entretenue
+                4- Abime
+                5- Epave""");
+        int ent = sc.nextInt();
+        Entretien entretien = null;
+        switch (ent) {
+            case 1 -> entretien = Entretien.NEUVE;
+            case 2 -> entretien = Entretien.ENTRETENUE;
+            case 3 -> entretien = Entretien.PASENTRETENUE;
+            case 4 -> entretien = Entretien.ABIME;
+            case 5 -> entretien = Entretien.EPAVE;
+        }
 
         int prix = getAnInt("Prix de la voiture : ");
 
@@ -181,8 +248,6 @@ public class CatalogueInterface {
         garage.addVoiture(newV);
         System.out.println(newV);
     }
-
-
 
     private int getAnInt(String x) {
         int integer;
@@ -198,5 +263,26 @@ public class CatalogueInterface {
             }
         }
         return integer;
+    }
+
+    private Modele getModele() {
+        System.out.println("Liste des modèles possible :\n");
+        for (Modele modele : Modele.values()) {
+            System.out.println(modele.nameToString() + ", ");
+        }
+        Modele modeleV = null;
+        boolean choix = true;
+        while (choix) {
+            System.out.println("Modèle de la voiture : ");
+            String nom = sc.next();
+            for (Modele modele : Modele.values()) {
+                if (Objects.equals(modele.nameToString(), nom.toUpperCase())) {
+                    modeleV = modele;
+                }
+            }
+            if (modeleV != null) choix = false;
+            else System.out.println("Modèle inconnu");
+        }
+        return modeleV;
     }
 }
