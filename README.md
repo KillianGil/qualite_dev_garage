@@ -28,7 +28,7 @@ En effet, **le projet** consiste à gérer un garage et ses voitures. Pouvant ê
 
 ### Fonctionnalités : <a id="fonctionnalites"></a>
 
-Nous pouvons retrouver plusieurs fonctionnalités au seins de notre application, nous pouvons les séparer en 3 parties distinctes : 
+Nous pouvons retrouver plusieurs fonctionnalités au seins de notre application, nous pouvons les séparer en 4 parties distinctes : 
 
 1. La consultation du catalogue : 
 
@@ -56,9 +56,23 @@ La deuxième fonctionnalités implémentées dans notre application est l’ajou
 
 3. La suppression d'une voiture : 
 
-La dernière fonctionnalité présentée est la suppression d’une voiture. Cette fonctionnalité est nécessaire afin de pouvoir gérer correctement un garage. De ce fait, lorsque l’utilisateur sélectionne l’option voulue, la liste de toutes les voitures présentes dans le garage est affichée. Cette liste comprend **le modèle** de la voiture ainsi que **sa plaque d’immatriculation**. Afin de pouvoir supprimer une voiture, l'utilisateur doit entrer la plaque immatriculation de la voiture à supprimer et cela s'effectue automatiquement. La voiture est alors supprimée du catalogue (exemple fourni ci-dessous). 
+La troisième fonctionnalité présentée est la suppression d’une voiture. Cette fonctionnalité est nécessaire afin de pouvoir gérer correctement un garage. De ce fait, lorsque l’utilisateur sélectionne l’option voulue, la liste de toutes les voitures présentes dans le garage est affichée. Cette liste comprend **le modèle** de la voiture ainsi que **sa plaque d’immatriculation**. Afin de pouvoir supprimer une voiture, l'utilisateur doit entrer la plaque immatriculation de la voiture à supprimer et cela s'effectue automatiquement. La voiture est alors supprimée du catalogue (exemple fourni ci-dessous). 
 <p align="center">
   <img src="https://www.cjoint.com/doc/22_12/LLmj22Rkeys_Capture-d’écran-2022-12-12-à-10.54.10.png" alt="Exemple Suppression Voiture"/>
+</p>
+
+4. La modification d'une voiture : 
+
+La derniere fonctionnalité présente dans notre jeu est **la modification d'une voiture**. En effet, en étant garagiste on est amené à effectuer plusieurs modifications sur les voitures de notre garage afin de les améliorer ou les réparer. Ici, nous donnons la possibilité au joueur de modifier 4 aspects sur ses voiture : 
+
+* L'entretien
+* Le prix 
+* Le nombre de mains 
+* Les roues 
+
+De ce fait, le joueur peut vraiment gérer son garage entièrement jusqu'à modifier ses voitures. Pour effectuer cela, un menu apparaîtra proposant la modification de voiture, puis il devra choisir la voiture à modifier en entrant sa plaque d'immatriculation. Ensuite, un nouveau menu avec les différentes options de modifications apparaîtra et le joueur devra sélectionner l'option voulue afin de la modifier. La voiture sera automatiquement modifiée dans le catalogue après la validation de celle-ci (exemple ci-dessous). 
+<p align="center">
+  <img src="https://www.cjoint.com/doc/22_12/LLojoBjwLMy_Capture-d’écran-2022-12-14-à-10.13.40.png" alt="Exemple Suppression Voiture"/>
 </p>
 
 ### Auteurs et Contacts : <a id="auteurcontact"></a>
