@@ -14,7 +14,7 @@ public class VoitureFactory {
                 annee, kilometrage, imat, entretien, prix, nbMains);
     }
 
-    private static String genImat() {
+    public static String genImat() {
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 7; i++) {
