@@ -28,9 +28,9 @@ public class Voiture implements Estimable, Notable {
         this.imatriculation = imatriculation;
         this.entretien = entretien;
         this.prix = prixNeuve;
-        estimer();
         this.nbMains = 0;
         noter();
+        estimer();
     }
 
     public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation, Entretien entretien, int prixNeuve, int nbMains) {
@@ -43,9 +43,9 @@ public class Voiture implements Estimable, Notable {
         this.imatriculation = imatriculation;
         this.entretien = entretien;
         this.prix = prixNeuve;
-        estimer();
         this.nbMains = nbMains;
         noter();
+        estimer();
     }
 
     public Marque getMarque() {
@@ -98,9 +98,9 @@ public class Voiture implements Estimable, Notable {
             case ABIME -> note -= 1.5;
             case EPAVE -> note -= 2.5;
         }
-        if (kilometrage > 100000) note -= 0.5;
+        if (kilometrage > 100000) note -= 1.5;
         else if (kilometrage > 80000) note -= 1;
-        else if (kilometrage > 40000) note -= 1.5;
+        else if (kilometrage > 40000) note -= 0.5;
 
         if (nbMains > 3) note -= 0.5;
     }

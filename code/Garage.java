@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Garage {
-    private ArrayList<Voiture> catalogue;
+    private ArrayList<Voiture> catalogue = new ArrayList<>();
     private final ArrayList<Voiture> filtre = new ArrayList<>();
 
     public Garage() {
@@ -61,11 +61,10 @@ public class Garage {
         filtre.clear();
         filtre.add(catalogue.get(0));
         for (int i = 0; i < catalogue.size(); ++i) {
-            int index = i;
             for (int j = i + 1; j < catalogue.size(); ++j) {
-                if (catalogue.get(j).getPrix() >= filtre.get(index).getPrix()) {
-                    filtre.add(0, catalogue.get(j));
-                    index = j;
+                if (catalogue.get(j).getPrix() >= filtre.get(i).getPrix()) {
+                    filtre.add(i, catalogue.get(j));
+                    i = j;
                 } else filtre.add(catalogue.get(j));
             }
         }
@@ -76,11 +75,10 @@ public class Garage {
         filtre.clear();
         filtre.add(catalogue.get(0));
         for (int i = 0; i < catalogue.size(); ++i) {
-            int index = i;
             for (int j = i + 1; j < catalogue.size(); ++j) {
-                if (catalogue.get(j).getNote() >= filtre.get(index).getNote()) {
+                if (catalogue.get(j).getNote() >= filtre.get(i).getNote()) {
                     filtre.add(0, catalogue.get(j));
-                    index = j;
+                    i = j;
                 } else filtre.add(catalogue.get(j));
             }
         }
