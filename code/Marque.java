@@ -1,5 +1,8 @@
 package code;
 
+import java.util.Objects;
+import java.util.Scanner;
+
 public enum Marque {
     ALPHAROMEO {
         String nameToString() {
@@ -58,4 +61,29 @@ public enum Marque {
     };
 
     abstract String nameToString();
+
+    private static Marque findMarque(String marqueVoiture){
+        for (Marque marque : Marque.values()) {
+            if (Objects.equals(marque.nameToString(), marqueVoiture.toUpperCase())) {
+                return marque;
+            }
+        }
+        return null;
+    }
+
+    public static Marque chooseMarque (Scanner sc){
+        System.out.println("Marque disponible");
+        for (Marque marque : Marque.values()) {
+            System.out.println(marque.nameToString() + ", ");
+        }
+
+        Marque marque;
+        while(true) {
+            System.out.println("Entrer la marque souhaite ");
+            marque = Marque.findMarque(sc.next());
+            if (marque != null) break;
+            else System.out.println("Marque non disponible");
+        }
+        return marque;
+    }
 }

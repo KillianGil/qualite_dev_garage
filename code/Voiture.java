@@ -136,7 +136,7 @@ public class Voiture implements Estimable, Notable {
 
     @Override
     public String toString() {
-        return "\nType= " + type +
+        return  "\nType= " + type +
                 "\nMarque= " + marque +
                 "\n" + moteur +
                 "\n" + roue +

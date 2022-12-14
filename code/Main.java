@@ -11,6 +11,6 @@ public class Main {
         }
 
         CatalogueInterface catalogue = new CatalogueInterface(new Garage(voitures));
-        catalogue.lancelejeu();
+        catalogue.menu();
     }
 }

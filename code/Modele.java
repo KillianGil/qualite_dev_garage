@@ -1,5 +1,8 @@
 package code;
 
+import java.util.Objects;
+import java.util.Scanner;
+
 public enum Modele {
     CENT_SIX {
         Marque getMarque() {
@@ -539,4 +542,29 @@ public enum Modele {
     abstract int getPrix();
 
     abstract String nameToString();
+
+    private static Modele findModele(String modeleVoiture){
+        for (Modele modele : Modele.values()) {
+            if (Objects.equals(modele.nameToString(), modeleVoiture.toUpperCase())) {
+                return modele;
+            }
+        }
+        return null;
+    }
+
+    public static Modele chooseModele(Scanner sc) {
+        System.out.println("Liste des Modele possible :\n");
+        for (Modele modele : Modele.values()) {
+            System.out.println(modele.nameToString() + ", ");
+        }
+
+        Modele modele;
+        while (true) {
+            System.out.println("Entretien souhaité : ");
+            modele = Modele.findModele(sc.next().toUpperCase());
+            if(modele != null) break;
+            else System.out.println("Entretien inconnu");
+        }
+        return modele;
+    }
 }

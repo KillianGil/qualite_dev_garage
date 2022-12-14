@@ -1,6 +1,7 @@
 package code;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 public enum Jante {
     TREIZE_POUCES{
@@ -61,12 +62,28 @@ public enum Jante {
 
     abstract String nameToString();
 
-    public static Jante findJante(String Taillejante){
+    private static Jante findJante(String Taillejante){
         for (Jante jante : Jante.values()) {
             if (Objects.equals(jante.nameToString(), Taillejante.toUpperCase())) {
                 return jante;
             }
         }
         return null;
+    }
+
+    public static  Jante chooseJante(Scanner sc){
+        System.out.println("Liste des taille de jantes disponible :\n");
+        for (Jante jante : Jante.values()) {
+            System.out.println(jante.nameToString() + ", ");
+        }
+
+        Jante jante;
+        while (true){
+            System.out.println("Taille des jantes souhaité: ");
+            jante = Jante.findJante(sc.next().toUpperCase());
+            if(jante != null) break;
+            else System.out.println("Taille inconnu");
+        }
+        return jante;
     }
 }
