@@ -83,8 +83,10 @@ La derniere fonctionnalité présente dans notre jeu est **la modification d'une
 
 De ce fait, le joueur peut vraiment gérer son garage entièrement jusqu'à modifier ses voitures. Pour effectuer cela, un menu apparaîtra proposant la modification de voiture, puis il devra choisir la voiture à modifier en entrant sa plaque d'immatriculation. Ensuite, un nouveau menu avec les différentes options de modifications apparaîtra et le joueur devra sélectionner l'option voulue afin de la modifier. La voiture sera automatiquement modifiée dans le catalogue après la validation de celle-ci (exemple ci-dessous). 
 <p align="center">
-  <img src="https://media.giphy.com/media/OF1pYKFpcpWeCbNHcX/giphy.gif" alt="Exemple Suppression Voiture"/>
+  <img src="https://media.giphy.com/media/OF1pYKFpcpWeCbNHcX/giphy.gif" alt="Exemple Modification Voiture"/>
 </p>
+
+Pour savoir comment fonctionne exactement chaque fonctionnalités, nous vous conseillons d'aller regarder les vidéos tutoriels situés dans le dossier "video_manuel_utilisation". Nous vous fournissons des explications simples et claires avec l'appui de différentes vidéos démontrant toutes les étapes à suivre afin de profiter pleinement de l'expérience de notre application. 
 
 ### Auteurs et Contacts : <a id="auteurcontact"></a>
 
