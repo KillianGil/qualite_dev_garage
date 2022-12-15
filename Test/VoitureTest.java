@@ -36,14 +36,14 @@ public class VoitureTest {
     @Test
     public void test_notation() {
         Voiture test = VoitureFactory.newVoiture(Modele.MODEL_S) ;
-        Voiture test2 = VoitureFactory.newVoitureOccasion(Modele.MODEL_S , 2022 , 42000 , "11AAA11" , Entretien.PASENTRETENUE , 138990 , 0) ;
+        Voiture test2 = VoitureFactory.newVoitureOccasion(Modele.MODEL_S , 2022 , 42000 , "AA111AA" , Entretien.PASENTRETENUE , 138990 , 0) ;
         Assertions.assertEquals(5 , test.getNote());
         Assertions.assertEquals(4 , test2.getNote());
     }
 
     @Test
     public void test_estimation() {
-        Voiture test2 = VoitureFactory.newVoitureOccasion(Modele.MODEL_S , 2022 , 42000 , "11AAA11" , Entretien.PASENTRETENUE , 138990 , 4) ;
+        Voiture test2 = VoitureFactory.newVoitureOccasion(Modele.MODEL_S , 2022 , 42000 , "AA111AA" , Entretien.PASENTRETENUE , 138990 , 4) ;
         Assertions.assertEquals(77217, test2.getPrix());
     }
 

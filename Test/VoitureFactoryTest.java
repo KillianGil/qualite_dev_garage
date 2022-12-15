@@ -25,7 +25,7 @@ public class VoitureFactoryTest {
     }
     @Test
     public void test_new_voiture_occasion() {
-        Voiture test2 = VoitureFactory.newVoitureOccasion(Modele.MODEL_S , 2022 , 42000 , "11AAA11" , Entretien.PASENTRETENUE , 138990 , 0) ;
+        Voiture test2 = VoitureFactory.newVoitureOccasion(Modele.MODEL_S , 2022 , 42000 , "AA111AA" , Entretien.PASENTRETENUE , 138990 , 0) ;
         ArrayList<Voiture> test_garage = new ArrayList<>() ;
         test_garage.add(test2) ;
         Boolean validation = false ;
@@ -41,7 +41,7 @@ public class VoitureFactoryTest {
     @Test
     public void test_gen_imat() {
         String test = code.VoitureFactory.genImat() ;
-        String regex = "\\d\\d[A-Z]{3}\\d{2}" ;
+        String regex = "[A-Z]{2}[0-9]{3}[A-Z]{2}" ;
         boolean validation = test.matches(regex);
         Assertions.assertTrue(validation);
     }

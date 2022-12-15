@@ -176,7 +176,7 @@ public class CatalogueInterface {
                 Voiture voiture = garage.getVoitureByImat(sc.next().toUpperCase());
                 if (voiture != null) {
                     garage.removeVoiture(voiture);
-                    System.out.println("Voiture " + voiture.getImatriculation() + " supprimer");
+                    System.out.println("Voiture " + voiture.getImatriculation() + " supprimee");
                     break;
                 }else System.out.println("Voiture inconnue");
             }
@@ -188,7 +188,7 @@ public class CatalogueInterface {
      * @param x Correspond à l'immatriculation de la voiture souhaité
      */
     private void afficherImat(String x) {
-        System.out.println("Saisir l'immatriculation de la voiture à " + x + " :\n");
+        System.out.println("Saisir l'immatriculation de la voiture a " + x + " :\n");
         for (int i = 0; i < garage.getCatalogue().size(); i++) {
             System.out.println(garage.getCatalogue().get(i).getMarque().nameToString() + " " + garage.getCatalogue().get(i).getImatriculation());
         }
@@ -206,12 +206,12 @@ public class CatalogueInterface {
 
         String imat;
         while (true) {
-            String regex = "\\d\\d[A-Z]{3}\\d{2}";
+            String regex = "[A-Z]{2}[0-9]{3}[A-Z]{2}";
             System.out.println("Immatriculation de la voiture : ");
             imat = sc.next().toUpperCase();
             if (imat.matches(regex)) {
                 break;
-            } else System.out.println("Immatriculation non conforme, \"11AAA11\" attendu");
+            } else System.out.println("Immatriculation non conforme, \"AA111AA\" attendu");
         }
 
         Entretien entretien = Entretien.chooseEntretien(sc);

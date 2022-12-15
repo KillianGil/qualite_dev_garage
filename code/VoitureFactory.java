@@ -26,8 +26,8 @@ public class VoitureFactory {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 7; i++) {
             switch (i) {
-                case 0, 1, 5, 6 -> stringBuilder.append(random.nextInt(9));
-                case 2, 3, 4 -> stringBuilder.append((char) (random.nextInt(26) + 'A'));
+                case 0, 1, 5, 6 -> stringBuilder.append((char) (random.nextInt(26) + 'A'));
+                case 2, 3, 4 -> stringBuilder.append(random.nextInt(9));
             }
         }
         return stringBuilder.toString();
