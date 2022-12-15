@@ -17,12 +17,14 @@ En effet, **le projet** consiste à gérer un garage et ses voitures. Pouvant ê
 ### Prérequis : <a id="prerequis"></a>
 
 ```
-1. Avoir Java installé sur son PC (de préférence la dernière version)
-2. Utiliser IntellijIdea
+1. Avoir Java 19 installé
+2. Télécharger le jeu avec le .jar
 ```
 
 
 ### Démarrage / Compilation : <a id="demarrage"></a>
+
+
 
 
 
