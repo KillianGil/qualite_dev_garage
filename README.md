@@ -17,12 +17,21 @@ En effet, **le projet** consiste à gérer un garage et ses voitures. Pouvant ê
 ### Prérequis : <a id="prerequis"></a>
 
 ```
-1. Avoir Java 19 installé
+1. Avoir Java 19 et le JDK 19 installé
 2. Télécharger le jeu avec le .jar
 ```
 
 
 ### Démarrage / Compilation : <a id="demarrage"></a>
+
+Afin de pouvoir lancer le jeu, il faut d'abord remplir les pré-requis. Par la suite il faut ouvrir un terminal et se placer dans l'endroit ou se trouve le fichier.jar (par exemple avec la commande cd puis l'emplacement du fichier sur linux). Après s'être placé correctement, il suffit de rentrer la commande suivante : 
+```
+java -jar nomDuFichier.jar 
+(pour notre jeu le fichier a pour nom de base : ProjetQualiteDev.jar)
+```
+Après avoir effectuer cela, vous pourrez jouer à notre jeu sur votre propre PC et votre propre terminal ! Une vidéo est disponible juste en dessous pour un tutoriel visuel. 
+
+<p align="center"> <img src="https://media.giphy.com/media/SLKwLtyFqMeEDjS00B/giphy.gif" alt="Video_tuto_jar" /> 
 
 
 
@@ -30,13 +39,13 @@ En effet, **le projet** consiste à gérer un garage et ses voitures. Pouvant ê
 
 ### Fonctionnalités : <a id="fonctionnalites"></a>
 
-Nous pouvons retrouver plusieurs fonctionnalités au seins de notre application, nous pouvons les séparer en 4 parties distinctes : 
+Nous pouvons retrouver plusieurs fonctionnalités au seins de notre application, de base quelques voitures neuves sont ajoutées au garage afin de bien démarrer le jeu. Nous pouvons séparer les fonctionnalités en 4 parties distinctes : 
 
 1. La consultation du catalogue : 
 
 Concernant la consultation du catalogue, nous laissons plusieurs choix à l'utilisateur. Nous lui proposons d’afficher **le catalogue** tel qu’il est de base avec toutes les voitures présentes dans le garage ainsi que **leurs caractéristiques** détaillées (exemple ci-dessous). 
 <p align="center">
-  <img src="https://www.cjoint.com/doc/22_12/LLmjctP1fJg_Capture-d’écran-2022-12-12-à-10.01.31.png" alt="Exemple Voiture Catalogue"/>
+  <img src="https://media.giphy.com/media/Rxt4iojdW7tEJPXMZn/giphy.gif" alt="Exemple Voiture Catalogue"/>
 </p>
 
 Ou alors, dans un second choix, nous lui proposons d’appliquer différents filtres  : 
@@ -53,14 +62,14 @@ Après la sélection voulue, nous appliquons donc directement le filtre voulu su
 
 La deuxième fonctionnalités implémentées dans notre application est l’ajout de voiture au garage. Pour ce faire, il suffit que l’utilisateur choisi l’option “Ajout de voiture”. Ensuite s’affiche automatiquement **la liste des modèles** disponibles à la création, il pourra donc ensuite rentrer chacun des paramètres de la voiture comme il le souhaite afin de créer la voiture. Toutes les caractéristiques de la voiture sont **personnalisables**. Enfin , la voiture sera ajoutée au catalogue du garage (exemple fourni ci-dessous). 
 <p align="center">
-  <img src="https://www.cjoint.com/doc/22_12/LLmjQO42bas_Capture-d’écran-2022-12-12-à-10.40.24-2.png" alt="Exemple Création Voiture"/>
+  <img src="https://media.giphy.com/media/cF7LnGHTEce2aCNMtl/giphy.gif" alt="Exemple Création Voiture"/>
 </p>
 
 3. La suppression d'une voiture : 
 
 La troisième fonctionnalité présentée est la suppression d’une voiture. Cette fonctionnalité est nécessaire afin de pouvoir gérer correctement un garage. De ce fait, lorsque l’utilisateur sélectionne l’option voulue, la liste de toutes les voitures présentes dans le garage est affichée. Cette liste comprend **le modèle** de la voiture ainsi que **sa plaque d’immatriculation**. Afin de pouvoir supprimer une voiture, l'utilisateur doit entrer la plaque immatriculation de la voiture à supprimer et cela s'effectue automatiquement. La voiture est alors supprimée du catalogue (exemple fourni ci-dessous). 
 <p align="center">
-  <img src="https://www.cjoint.com/doc/22_12/LLmj22Rkeys_Capture-d’écran-2022-12-12-à-10.54.10.png" alt="Exemple Suppression Voiture"/>
+  <img src="https://media.giphy.com/media/MXtXoUIlEBS0hCunRR/giphy.gif" alt="Exemple Suppression Voiture"/>
 </p>
 
 4. La modification d'une voiture : 
@@ -74,7 +83,7 @@ La derniere fonctionnalité présente dans notre jeu est **la modification d'une
 
 De ce fait, le joueur peut vraiment gérer son garage entièrement jusqu'à modifier ses voitures. Pour effectuer cela, un menu apparaîtra proposant la modification de voiture, puis il devra choisir la voiture à modifier en entrant sa plaque d'immatriculation. Ensuite, un nouveau menu avec les différentes options de modifications apparaîtra et le joueur devra sélectionner l'option voulue afin de la modifier. La voiture sera automatiquement modifiée dans le catalogue après la validation de celle-ci (exemple ci-dessous). 
 <p align="center">
-  <img src="https://www.cjoint.com/doc/22_12/LLojoBjwLMy_Capture-d’écran-2022-12-14-à-10.13.40.png" alt="Exemple Suppression Voiture"/>
+  <img src="https://media.giphy.com/media/OF1pYKFpcpWeCbNHcX/giphy.gif" alt="Exemple Suppression Voiture"/>
 </p>
 
 ### Auteurs et Contacts : <a id="auteurcontact"></a>
