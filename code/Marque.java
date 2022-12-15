@@ -71,6 +71,11 @@ public enum Marque {
         return null;
     }
 
+    /**
+     * Fonction permettant l'affichage des marques disponibles d'une voiture et permet sa modification selon le choix de l'utilisateur
+     * @param sc Entrée clavier de l'utilisateur de la marque choisie
+     * @return Retourne la marque choisie par l'utilisateur
+     */
     public static Marque chooseMarque (Scanner sc){
         System.out.println("Marque disponible");
         for (Marque marque : Marque.values()) {

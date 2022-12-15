@@ -552,6 +552,11 @@ public enum Modele {
         return null;
     }
 
+    /**
+     * Fonction permettant l'affichage des modèles disponibles d'une voiture et permet sa modification selon le choix de l'utilisateur
+     * @param sc Entrée clavier de l'utilisateur du modèle choisi
+     * @return Retourne le modèle choisi par l'utilisateur
+     */
     public static Modele chooseModele(Scanner sc) {
         System.out.println("Liste des Modele possible :\n");
         for (Modele modele : Modele.values()) {

@@ -10,11 +10,11 @@ public class Roue {
         this.jante = jantes;
         this.marquePneu = marquePneu;
     }
-
+    /** Retourne les jantes de la voiture */
     public Jante getJantes() {
         return jante;
     }
-
+    /** Retourne la marque de pneu de la voiture */
     public MarquePneu getMarquePneu() {
         return marquePneu;
     }

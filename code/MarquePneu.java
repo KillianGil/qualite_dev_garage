@@ -40,7 +40,11 @@ public enum MarquePneu {
         }
         return null;
     }
-
+    /**
+     * Fonction permettant l'affichage des marques de pneus disponibles d'une voiture et permet sa modification selon le choix de l'utilisateur
+     * @param sc Entrée clavier de l'utilisateur de la marque de pneu choisie
+     * @return Retourne la marque de pneu choisie par l'utilisateur
+     */
     public static MarquePneu chooseMarquePneu(Scanner sc){
         System.out.println("Liste des marques de pneu disponible :\n");
         for (MarquePneu marquePneu : MarquePneu.values()) {

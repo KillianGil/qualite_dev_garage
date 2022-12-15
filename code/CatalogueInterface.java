@@ -10,6 +10,9 @@ public class CatalogueInterface {
         this.garage = garage;
     }
 
+    /**
+     * Le menu permet à l'affichage des différentes possibilités de choix tel que l'ajout, modification et supression d'une voiture.
+     */
     public void menu() {
         System.out.println("""
                             _________
@@ -51,6 +54,9 @@ public class CatalogueInterface {
         System.out.println("Merci de votre visite\n");
     }
 
+    /**
+     * Fonction affichant le menu de modification de voiture
+     */
     private void modifVoiture() {
         afficherImat("modifier");
         if (!garage.getCatalogue().isEmpty()) {
@@ -75,31 +81,45 @@ public class CatalogueInterface {
         }else System.out.println("Le garage est vide !");
     }
 
+    /**
+     * Fonction affichant l'entretien actuel de la voiture et permettant sa modification
+     */
     private void modifEntretien(Voiture voiture) {
         System.out.println("Entretient actuel : " + voiture.getEntretien());
         voiture.setEntretien(Entretien.chooseEntretien(sc));
         System.out.println("Entretien modifie avec succes");
     }
 
+    /**
+     * Fonction affichant le prix actuel de la voiture et permettant sa modification
+     */
     private void modifPrix(Voiture voiture) {
         System.out.println("Prix actuel : " + voiture.getPrix() + "\nCombien souhaité vous la vendre ?");
         voiture.setPrix(sc.nextInt());
         System.out.println("Prix modifie avec succes");
     }
 
+    /**
+     * Fonction affichant le nombre de main actuel de la voiture et permettant sa modification
+     */
     private void modifNbMains(Voiture voiture) {
         System.out.println("Nombre de mains actuel : " + voiture.getNbMains() + "\nCombien souhaité vous en mettre ?");
         voiture.setNbMains(sc.nextInt());
         System.out.println("Nombre de mains modifie avec succes");
     }
 
-
+    /**
+     * Fonction affichant les roues actuelles de la voiture et permettant leurs modifications
+     */
     private void modifRoue(Voiture voiture) {
         System.out.println("Roue actuel : " + voiture.getRoue());
         voiture.setRoue(new Roue(Jante.chooseJante(sc), MarquePneu.chooseMarquePneu(sc)));
         System.out.println("Roue modifie avec succes");
     }
 
+    /**
+     * Fonction affichant le menu du catalogue de voitures et permet l'accès aux filtres de ce dernier
+     */
     private void catalogue() {
         if (!garage.getCatalogue().isEmpty()) {
             boolean catalogue = true;
@@ -119,6 +139,9 @@ public class CatalogueInterface {
         } else System.out.println("Le garage est vide !");
     }
 
+    /**
+     * Fonction permettant l'affichage et l'application des différents choix de filtres du catalogue
+     */
     private void choixFiltre() {
         boolean filtre = true;
         while (filtre) {
@@ -143,6 +166,9 @@ public class CatalogueInterface {
         }
     }
 
+    /**
+     * Fonction permettant l'affichage et l'application de la supression d'une voiture par immatriculation
+     */
     private void supVoiture() {
         afficherImat("supprimer");
         if (!garage.getCatalogue().isEmpty()) {
@@ -157,6 +183,10 @@ public class CatalogueInterface {
         } else System.out.println("Le garage est vide !");
     }
 
+    /**
+     * Fonction permettant l'affichage et l'application de la supression d'une voiture par immatriculation
+     * @param x Correspond à l'immatriculation de la voiture souhaité
+     */
     private void afficherImat(String x) {
         System.out.println("Entree l'imatriculation de la voiture à " + x + " :\n");
         for (int i = 0; i < garage.getCatalogue().size(); i++) {
@@ -164,6 +194,9 @@ public class CatalogueInterface {
         }
     }
 
+    /**
+     * Fonction permettant l'affichage et l'application de l'ajout d'une nouvelle voiture
+     */
     private void newVoiture() {
         Modele modele = Modele.chooseModele(sc);
 
@@ -192,6 +225,10 @@ public class CatalogueInterface {
         System.out.println(newV);
     }
 
+    /**
+     * Fonction permettant de verifier que l'utilisateur saisi bien un entier, lui informe si le format n'est pas valide
+     * @param x Demande à l'utilisateur l'ajout d'un entier ( tel qu'une année par exemple )
+     */
     private int getAnInt(String x) {
         int integer;
         System.out.println(x);

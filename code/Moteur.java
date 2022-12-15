@@ -13,19 +13,19 @@ public class Moteur {
         this.consomation = consomation;
         this.propultion = propultion;
     }
-
+    /** Retourne la puissance Fiscale */
     public int getPuissanceFiscal() {
         return puissanceFiscal;
     }
-
+    /** Retourne le nombre de chevaux */
     public int getCheveaux() {
         return cheveaux;
     }
-
+    /** Retourne la consommation de la voiture */
     public double getConsomation() {
         return consomation;
     }
-
+    /** Retourne la propultion de la voiture */
     public Propultion getPropultion() {
         return propultion;
     }

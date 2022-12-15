@@ -15,20 +15,21 @@ public class Garage {
         this.catalogue = catalogue;
     }
 
-    public void setCatalogue(ArrayList<Voiture> catalogue) {
-        this.catalogue = catalogue;
-    }
-
+    /** Retourne la liste de voiture du catalogue */
     public ArrayList<Voiture> getCatalogue() {
         return catalogue;
     }
-
+    /** Ajout d'une voiture dans le catalogue */
     public void addVoiture(Voiture voiture) {
         this.catalogue.add(voiture);
     }
-
+    /** Suppression d'une voiture dans le catalogue */
     public void removeVoiture(Voiture voiture){this.catalogue.remove(voiture);}
 
+    /**
+     * Fonction permettant de trouver une voiture grâce à son immatriculation
+     * @param imat Immatriculation de la voiture choisie
+     */
     public Voiture getVoitureByImat(String imat){
         for (Voiture voiture : this.catalogue) {
             if (Objects.equals(voiture.getImatriculation(), imat)) {
@@ -38,6 +39,11 @@ public class Garage {
         return null;
     }
 
+    /**
+     * Fonction permettant à l'utilisateur de selectionner une voiture par immatriculation
+     * @param sc Entrée clavier de l'immatriculation par l'utilisateur
+     * @return Retourne la voiture choisie par immatriculation
+     */
     public Voiture chooseVoitureByImat(Scanner sc){
         Voiture voiture;
         while(true) {
@@ -49,6 +55,11 @@ public class Garage {
         return voiture;
     }
 
+    /**
+     * Fonction permettant à l'utilisateur de filter tout le catalogue par marque
+     * @param marque Correspond à la marque choisie pour le filtrage dans le catalogue de voiture
+     * @return Retourne la liste de voiture disponible de cette marque ci
+     */
     public ArrayList<Voiture> filtreMarque(Marque marque) {
         filtre.clear();
         for (Voiture voiture : catalogue) {
@@ -57,6 +68,10 @@ public class Garage {
         return filtre;
     }
 
+    /**
+     * Fonction permettant à l'utilisateur de filter tout le catalogue par prix
+     * @return Retourne la liste de voiture disponible par prix
+     */
     public ArrayList<Voiture> filtrePrix() {
         filtre.clear();
         filtre.add(catalogue.get(0));
@@ -70,7 +85,10 @@ public class Garage {
         }
         return filtre;
     }
-
+    /**
+     * Fonction permettant à l'utilisateur de filter tout le catalogue par note
+     * @return Retourne la liste de voiture disponible par note ( ordre décroissant )
+     */
     public ArrayList<Voiture> filtreNote() {
         filtre.clear();
         filtre.add(catalogue.get(0));
@@ -84,7 +102,10 @@ public class Garage {
         }
         return filtre;
     }
-
+    /**
+     * Fonction permettant à l'utilisateur de filter tout le catalogue en fonction du nombre de mains
+     * @return Retourne la liste de voiture disponible par nombre de mains
+     */
     public ArrayList<Voiture> filtreNbMain(int nbMain) {
         filtre.clear();
         for (Voiture voiture : catalogue) {

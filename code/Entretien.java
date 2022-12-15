@@ -41,6 +41,11 @@ public enum Entretien {
         return null;
     }
 
+    /**
+     * Fonction permettant l'affichage des status d'entretients disponibles d'une voiture et permet sa modification selon le choix de l'utilisateur
+     * @param sc Entrée clavier de l'utilisateur de l'entretien choisi
+     * @return Retourne l'entretien choisi par l'utilisateur
+     */
     public static Entretien chooseEntretien(Scanner sc) {
         System.out.println("Liste des Entretien possible :\n");
         for (Entretien entretien : Entretien.values()) {

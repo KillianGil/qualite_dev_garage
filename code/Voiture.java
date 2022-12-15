@@ -47,51 +47,52 @@ public class Voiture implements Estimable, Notable {
         noter();
         estimer();
     }
-
+    /** Retourne la marque de la voiture */
     public Marque getMarque() {
         return marque;
     }
-
+    /** Retourne le nombre de mains de la voiture */
     public int getNbMains() {
         return nbMains;
     }
-
+    /** Retourne la note de la voiture */
     public double getNote() {
         return note;
     }
-
+    /** Retourne le prix de la voiture */
     public int getPrix() {
         return prix;
     }
-
+    /** Retourne la roue de la voiture */
     public Roue getRoue() {
         return roue;
     }
-
+    /** Retourne l'entretien de la voiture */
     public Entretien getEntretien() {
         return entretien;
     }
-
+    /** Retourne l'immatriculation de la voiture */
     public String getImatriculation() {
         return imatriculation;
     }
-
+    /** Permet la modification de la roue actuelle de la voiture */
     public void setRoue(Roue roue) {
         this.roue = roue;
     }
-
+    /** Permet la modification du prix actuel de la voiture */
     public void setPrix(int prix) {
         this.prix = prix;
     }
-
+    /** Permet la modification du nombre de main actuel de la voiture */
     public void setNbMains(int nbMains) {
         this.nbMains = nbMains;
     }
-
+    /** Permet la modification de l'entretien actuel de la voiture */
     public void setEntretien(Entretien entretien) {
         this.entretien = entretien;
     }
 
+    /** Fonction permettant la notation automatique d'une voiture selon 3 caractéristiques : l'entretien , le kilométrage et le nombre de mains*/
     public void noter() {
         switch (entretien) {
             case PASENTRETENUE -> note -= 0.5;
@@ -105,6 +106,7 @@ public class Voiture implements Estimable, Notable {
         if (nbMains > 3) note -= 0.5;
     }
 
+    /** Fonction permettant l'estimation de prix d'une voiture selon les caractéristiques suivantes: l'année de la voiture, son nombre de main et sa note*/
     public void estimer() {
         if (entretien != Entretien.NEUVE) {
             if (annee + 1 == Year.now().getValue()) prix -= prix/3;

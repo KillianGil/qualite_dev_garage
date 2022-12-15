@@ -70,7 +70,11 @@ public enum Jante {
         }
         return null;
     }
-
+    /**
+     * Fonction permettant l'affichage des jantes disponibles d'une voiture et permet sa modification selon le choix de l'utilisateur
+     * @param sc Entrée clavier de l'utilisateur pour son choix de jante
+     * @return Retourne la jante choisi par l'utilisateur
+     */
     public static  Jante chooseJante(Scanner sc){
         System.out.println("Liste des taille de jantes disponible :\n");
         for (Jante jante : Jante.values()) {
