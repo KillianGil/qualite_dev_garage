@@ -39,7 +39,7 @@ Après avoir effectuer cela, vous pourrez jouer à notre jeu sur votre propre PC
 
 ### Fonctionnalités : <a id="fonctionnalites"></a>
 
-Nous pouvons retrouver plusieurs fonctionnalités au seins de notre application, nous pouvons les séparer en 4 parties distinctes : 
+Nous pouvons retrouver plusieurs fonctionnalités au seins de notre application, de base quelques voitures neuves sont ajoutées au garage afin de bien démarrer le jeu. Nous pouvons séparer les fonctionnalités en 4 parties distinctes : 
 
 1. La consultation du catalogue : 
 
