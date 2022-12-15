@@ -16,7 +16,7 @@ public class Voiture implements Estimable, Notable {
     private double note = 5.0;
 
     private Entretien entretien;
-    private final String imatriculation;
+    private final String immatriculation;
 
     public Voiture(Type type, Marque marque, Moteur moteur, Roue roue, int annee, int kilometrage, String imatriculation, Entretien entretien, int prixNeuve) {
         this.type = type;
@@ -25,7 +25,7 @@ public class Voiture implements Estimable, Notable {
         this.roue = roue;
         this.annee = annee;
         this.kilometrage = kilometrage;
-        this.imatriculation = imatriculation;
+        this.immatriculation = imatriculation;
         this.entretien = entretien;
         this.prix = prixNeuve;
         this.nbMains = 0;
@@ -40,7 +40,7 @@ public class Voiture implements Estimable, Notable {
         this.roue = roue;
         this.annee = annee;
         this.kilometrage = kilometrage;
-        this.imatriculation = imatriculation;
+        this.immatriculation = imatriculation;
         this.entretien = entretien;
         this.prix = prixNeuve;
         this.nbMains = nbMains;
@@ -51,42 +51,52 @@ public class Voiture implements Estimable, Notable {
     public Marque getMarque() {
         return marque;
     }
+
     /** Retourne le nombre de mains de la voiture */
     public int getNbMains() {
         return nbMains;
     }
+
     /** Retourne la note de la voiture */
     public double getNote() {
         return note;
     }
+
     /** Retourne le prix de la voiture */
     public int getPrix() {
         return prix;
     }
+
     /** Retourne la roue de la voiture */
     public Roue getRoue() {
         return roue;
     }
+
     /** Retourne l'entretien de la voiture */
     public Entretien getEntretien() {
         return entretien;
     }
+
     /** Retourne l'immatriculation de la voiture */
     public String getImatriculation() {
-        return imatriculation;
+        return immatriculation;
     }
+
     /** Permet la modification de la roue actuelle de la voiture */
     public void setRoue(Roue roue) {
         this.roue = roue;
     }
+
     /** Permet la modification du prix actuel de la voiture */
     public void setPrix(int prix) {
         this.prix = prix;
     }
+
     /** Permet la modification du nombre de main actuel de la voiture */
     public void setNbMains(int nbMains) {
         this.nbMains = nbMains;
     }
+
     /** Permet la modification de l'entretien actuel de la voiture */
     public void setEntretien(Entretien entretien) {
         this.entretien = entretien;
@@ -96,7 +106,7 @@ public class Voiture implements Estimable, Notable {
     public void noter() {
         switch (entretien) {
             case PASENTRETENUE -> note -= 0.5;
-            case ABIME -> note -= 1.5;
+            case ABIMEE -> note -= 1.5;
             case EPAVE -> note -= 2.5;
         }
         if (kilometrage > 100000) note -= 1.5;
@@ -128,12 +138,12 @@ public class Voiture implements Estimable, Notable {
         return annee == voiture.annee && kilometrage == voiture.kilometrage && nbMains == voiture.nbMains &&
                 prix == voiture.prix && Double.compare(voiture.note, note) == 0 && type == voiture.type &&
                 marque == voiture.marque && Objects.equals(moteur, voiture.moteur) && Objects.equals(roue, voiture.roue) &&
-                entretien == voiture.entretien && Objects.equals(imatriculation, voiture.imatriculation);
+                entretien == voiture.entretien && Objects.equals(immatriculation, voiture.immatriculation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, marque, moteur, roue, annee, kilometrage, nbMains, prix, note, entretien, imatriculation);
+        return Objects.hash(type, marque, moteur, roue, annee, kilometrage, nbMains, prix, note, entretien, immatriculation);
     }
 
     @Override
@@ -148,7 +158,7 @@ public class Voiture implements Estimable, Notable {
                 "\nNote= " + note +
                 "\nPrix= " + prix +
                 "\nEntretien= " + entretien +
-                "\nImatriculation= '" + imatriculation + '\'' +
+                "\nImatriculation= '" + immatriculation + '\'' +
                 "}\n";
     }
 }

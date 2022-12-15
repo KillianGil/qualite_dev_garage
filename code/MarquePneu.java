@@ -46,14 +46,14 @@ public enum MarquePneu {
      * @return Retourne la marque de pneu choisie par l'utilisateur
      */
     public static MarquePneu chooseMarquePneu(Scanner sc){
-        System.out.println("Liste des marques de pneu disponible :\n");
+        System.out.println("Liste des marques de pneus disponibles :\n");
         for (MarquePneu marquePneu : MarquePneu.values()) {
             System.out.println(marquePneu.nameToString() + ", ");
         }
 
         MarquePneu marquePneu;
         while (true) {
-            System.out.println("Marque des pneux souhaité : ");
+            System.out.println("Marque des pneus souhaites : ");
             marquePneu = MarquePneu.findMarquePneu(sc.next().toUpperCase());
             if(marquePneu != null) break;
             else System.out.println("Modèle inconnu");

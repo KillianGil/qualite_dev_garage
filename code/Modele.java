@@ -558,14 +558,14 @@ public enum Modele {
      * @return Retourne le modèle choisi par l'utilisateur
      */
     public static Modele chooseModele(Scanner sc) {
-        System.out.println("Liste des Modele possible :\n");
+        System.out.println("Liste des modeles disponibles :\n");
         for (Modele modele : Modele.values()) {
             System.out.println(modele.nameToString() + ", ");
         }
 
         Modele modele;
         while (true) {
-            System.out.println("Modele souhaité : ");
+            System.out.println("Modele souhaite : ");
             modele = Modele.findModele(sc.next().toUpperCase());
             if(modele != null) break;
             else System.out.println("Modele inconnu");

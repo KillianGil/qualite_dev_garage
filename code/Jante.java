@@ -76,17 +76,17 @@ public enum Jante {
      * @return Retourne la jante choisi par l'utilisateur
      */
     public static  Jante chooseJante(Scanner sc){
-        System.out.println("Liste des taille de jantes disponible :\n");
+        System.out.println("Liste des tailles de jantes disponibles :\n");
         for (Jante jante : Jante.values()) {
             System.out.println(jante.nameToString() + ", ");
         }
 
         Jante jante;
         while (true){
-            System.out.println("Taille des jantes souhaité: ");
+            System.out.println("Taille des jantes souhaite: ");
             jante = Jante.findJante(sc.next().toUpperCase());
             if(jante != null) break;
-            else System.out.println("Taille inconnu");
+            else System.out.println("Taille inconnue");
         }
         return jante;
     }

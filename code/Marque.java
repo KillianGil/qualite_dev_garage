@@ -77,7 +77,7 @@ public enum Marque {
      * @return Retourne la marque choisie par l'utilisateur
      */
     public static Marque chooseMarque (Scanner sc){
-        System.out.println("Marque disponible");
+        System.out.println("Liste des marques disponibles");
         for (Marque marque : Marque.values()) {
             System.out.println(marque.nameToString() + ", ");
         }

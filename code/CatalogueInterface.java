@@ -40,7 +40,7 @@ public class CatalogueInterface {
                     3- Supprimer une voiture
                     4- Modifier une voiture
                     5- Quitter le garage
-                    Rentrer le chiffre de votre choix :
+                    Saisir le chiffre de votre choix :
                     """);
 
             switch (sc.nextInt()) {
@@ -65,8 +65,8 @@ public class CatalogueInterface {
                 while (modif) {
                     System.out.println("""
                             1- Modifier roue
-                            2- Modifier nombre de mains
-                            3- Modifier prix
+                            2- Modifier le nombre de mains
+                            3- Modifier le prix
                             4- Modifier l'entretien
                             5- Retour au menu
                             """);
@@ -85,7 +85,7 @@ public class CatalogueInterface {
      * Fonction affichant l'entretien actuel de la voiture et permettant sa modification
      */
     private void modifEntretien(Voiture voiture) {
-        System.out.println("Entretient actuel : " + voiture.getEntretien());
+        System.out.println("Entretien actuel : " + voiture.getEntretien());
         voiture.setEntretien(Entretien.chooseEntretien(sc));
         System.out.println("Entretien modifie avec succes");
     }
@@ -94,7 +94,7 @@ public class CatalogueInterface {
      * Fonction affichant le prix actuel de la voiture et permettant sa modification
      */
     private void modifPrix(Voiture voiture) {
-        System.out.println("Prix actuel : " + voiture.getPrix() + "\nCombien souhaité vous la vendre ?");
+        System.out.println("Prix actuel : " + voiture.getPrix() + "\nCombien souhaitez-vous la vendre ?");
         voiture.setPrix(sc.nextInt());
         System.out.println("Prix modifie avec succes");
     }
@@ -103,7 +103,7 @@ public class CatalogueInterface {
      * Fonction affichant le nombre de main actuel de la voiture et permettant sa modification
      */
     private void modifNbMains(Voiture voiture) {
-        System.out.println("Nombre de mains actuel : " + voiture.getNbMains() + "\nCombien souhaité vous en mettre ?");
+        System.out.println("Nombre de mains actuel : " + voiture.getNbMains() + "\nCombien souhaitez-vous en mettre ?");
         voiture.setNbMains(sc.nextInt());
         System.out.println("Nombre de mains modifie avec succes");
     }
@@ -112,7 +112,7 @@ public class CatalogueInterface {
      * Fonction affichant les roues actuelles de la voiture et permettant leurs modifications
      */
     private void modifRoue(Voiture voiture) {
-        System.out.println("Roue actuel : " + voiture.getRoue());
+        System.out.println("Roue actuelle : " + voiture.getRoue());
         voiture.setRoue(new Roue(Jante.chooseJante(sc), MarquePneu.chooseMarquePneu(sc)));
         System.out.println("Roue modifie avec succes");
     }
@@ -125,7 +125,7 @@ public class CatalogueInterface {
             boolean catalogue = true;
             while (catalogue) {
                 System.out.println("""
-                        1- Consuter le catalogue
+                        1- Consulter le catalogue
                         2- Appliquer des filtres
                         3- Retour au menu
                         """);
@@ -149,7 +149,7 @@ public class CatalogueInterface {
                     1- Filtrer par marque
                     2- Filtrer par prix
                     3- Filtrer par note
-                    4- Filtrer par nombre de main
+                    4- Filtrer par nombre de mains
                     5- Retour au menu
                     """);
             switch (sc.nextInt()) {
@@ -157,7 +157,7 @@ public class CatalogueInterface {
                 case 2 -> System.out.println(garage.filtrePrix());
                 case 3 -> System.out.println(garage.filtreNote());
                 case 4 -> {
-                    System.out.println("Entrer le nombre de main souhaite ");
+                    System.out.println("Saisir le nombre de main souhaite ");
                     System.out.println(garage.filtreNbMain(sc.nextInt()));
                 }
                 case 5 -> filtre = false;
@@ -178,7 +178,7 @@ public class CatalogueInterface {
                     garage.removeVoiture(voiture);
                     System.out.println("Voiture " + voiture.getImatriculation() + " supprimer");
                     break;
-                }else System.out.println("Voiture inconue");
+                }else System.out.println("Voiture inconnue");
             }
         } else System.out.println("Le garage est vide !");
     }
@@ -188,7 +188,7 @@ public class CatalogueInterface {
      * @param x Correspond à l'immatriculation de la voiture souhaité
      */
     private void afficherImat(String x) {
-        System.out.println("Entree l'imatriculation de la voiture à " + x + " :\n");
+        System.out.println("Saisir l'immatriculation de la voiture à " + x + " :\n");
         for (int i = 0; i < garage.getCatalogue().size(); i++) {
             System.out.println(garage.getCatalogue().get(i).getMarque().nameToString() + " " + garage.getCatalogue().get(i).getImatriculation());
         }
@@ -207,11 +207,11 @@ public class CatalogueInterface {
         String imat;
         while (true) {
             String regex = "\\d\\d[A-Z]{3}\\d{2}";
-            System.out.println("Imatriculation de la voiture : ");
+            System.out.println("Immatriculation de la voiture : ");
             imat = sc.next().toUpperCase();
             if (imat.matches(regex)) {
                 break;
-            } else System.out.println("Imatriculation non conforme, \"11AAA11\" attendu");
+            } else System.out.println("Immatriculation non conforme, \"11AAA11\" attendu");
         }
 
         Entretien entretien = Entretien.chooseEntretien(sc);

@@ -19,9 +19,9 @@ public enum Entretien {
             return "PASENTRETENUE";
         }
     },
-    ABIME{
+    ABIMEE{
         String nameToString() {
-            return "ABIME";
+            return "ABIMEE";
         }
     },
     EPAVE{
@@ -47,7 +47,7 @@ public enum Entretien {
      * @return Retourne l'entretien choisi par l'utilisateur
      */
     public static Entretien chooseEntretien(Scanner sc) {
-        System.out.println("Liste des Entretien possible :\n");
+        System.out.println("Liste des statuts d'entretien possible :\n");
         for (Entretien entretien : Entretien.values()) {
             System.out.println(entretien.nameToString() + ", ");
         }

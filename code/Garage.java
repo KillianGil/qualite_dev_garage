@@ -47,7 +47,7 @@ public class Garage {
     public Voiture chooseVoitureByImat(Scanner sc){
         Voiture voiture;
         while(true) {
-            System.out.println("Entrer l'imatriculation de la voiture souhaite ");
+            System.out.println("Saisir l'immatriculation de la voiture souhaite ");
             voiture = getVoitureByImat(sc.next().toUpperCase());
             if (voiture != null) break;
             else System.out.println("Voiture non disponible");
